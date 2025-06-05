@@ -1,5 +1,6 @@
 {
-  "name": "my-v0-project",
+  "name": "my-portfilio",
+  "description": "A personal portfolio website built with Next.js, Tailwind CSS, and Radix UI components.",
   "version": "0.1.0",
   "private": true,
   "scripts": {
