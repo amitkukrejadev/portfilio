@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { Github, Linkedin, Mail } from "lucide-react"
+import Link from "next/link";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -7,8 +7,8 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <Link href="/" className="font-bold text-xl dark:text-white">
-              Amit.
+            <Link href="/" className="font-bold text-xxl dark:text-white">
+              Amit Kukreja.
             </Link>
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
               Full Stack Developer specializing in React, Next.js, and Node.js
@@ -82,5 +82,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
