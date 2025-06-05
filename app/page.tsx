@@ -93,7 +93,12 @@ export default function Home() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                   <Mail className="w-4 h-4" />
-                  <span>amitkukrejadev@gmail.com</span>
+                  <a
+                    href="mailto:amitkukrejadev@gmail.com"
+                    className="hover:underline"
+                  >
+                    amitkukrejadev@gmail.com
+                  </a>
                 </div>
                 <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                   <MapPin className="w-4 h-4" />
@@ -101,19 +106,47 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                   <Globe className="w-4 h-4" />
-                  <span>amitkukrejadev.vercel.app</span>
+                  <a
+                    href="https://amitkukrejadev.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    amitkukrejadev.vercel.app
+                  </a>
                 </div>
                 <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                   <Linkedin className="w-4 h-4" />
-                  <span>linkedin.com/in/amitkukrejadev</span>
+                  <a
+                    href="https://linkedin.com/in/amitkukrejadev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    linkedin.com/in/amitkukrejadev
+                  </a>
                 </div>
                 <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                   <Github className="w-4 h-4" />
-                  <span>github.com/amitkukrejadev</span>
+                  <a
+                    href="https://github.com/amitkukrejadev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    github.com/amitkukrejadev
+                  </a>
                 </div>
                 <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                   <Users className="w-4 h-4" />
-                  <span>peerlist.io/iamamitkukreja</span>
+                  <a
+                    href="https://peerlist.io/iamamitkukreja"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    peerlist.io/iamamitkukreja
+                  </a>
                 </div>
               </div>
 
