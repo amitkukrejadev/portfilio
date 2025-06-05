@@ -1,7 +1,6 @@
 "use client";
 
 import type React from "react";
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,14 +15,15 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    from_name: "",
+    from_email: "",
     message: "",
   });
 
@@ -38,43 +38,41 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        "service_hi5np87", // Your Service ID
+        "template_dlkaikm", // Your Template ID
+        {
+          from_name: formData.from_name,
+          from_email: formData.from_email,
+          message: formData.message,
+        },
+        "Bzx4RSJl5hX5rH9Wh" // Your Public Key
+      );
+
       setIsSubmitting(false);
       setIsSubmitted(true);
       toast({
-        title: "Message sent!",
+        title: "Message sent successfully!",
         description: "Thank you for your message. I'll get back to you soon.",
       });
+
       // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false);
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ from_name: "", from_email: "", message: "" });
       }, 3000);
-    }, 1500);
-
-    // In a real implementation, you would use EmailJS or a similar service:
-    // try {
-    //   await emailjs.send(
-    //     'YOUR_SERVICE_ID',
-    //     'YOUR_TEMPLATE_ID',
-    //     formData,
-    //     'YOUR_PUBLIC_KEY'
-    //   );
-    //   setIsSubmitting(false);
-    //   setIsSubmitted(true);
-    //   toast({
-    //     title: "Message sent!",
-    //     description: "Thank you for your message. I'll get back to you soon.",
-    //   });
-    // } catch (error) {
-    //   setIsSubmitting(false);
-    //   toast({
-    //     title: "Error",
-    //     description: "There was an error sending your message. Please try again.",
-    //     variant: "destructive",
-    //   });
-    // }
+    } catch (error) {
+      setIsSubmitting(false);
+      console.error("EmailJS Error:", error);
+      toast({
+        title: "Failed to send message",
+        description:
+          "There was an error sending your message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -102,9 +100,12 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium dark:text-white">Email</p>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <a
+                      href="mailto:amitkukrejadev@gmail.com"
+                      className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    >
                       amitkukrejadev@gmail.com
-                    </p>
+                    </a>
                   </div>
                 </div>
 
@@ -161,7 +162,7 @@ export default function ContactPage() {
                   <div>
                     <p className="font-medium dark:text-white">Peerlist</p>
                     <a
-                      href="https://peerlist.io/amitkukreja"
+                      href="https://peerlist.io/iamamitkukreja"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
@@ -192,16 +193,16 @@ export default function ContactPage() {
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label
-                    htmlFor="name"
+                    htmlFor="from_name"
                     className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                   >
                     Name
                   </label>
                   <Input
-                    id="name"
-                    name="name"
+                    id="from_name"
+                    name="from_name"
                     placeholder="Your name"
-                    value={formData.name}
+                    value={formData.from_name}
                     onChange={handleChange}
                     required
                     disabled={isSubmitting || isSubmitted}
@@ -211,17 +212,17 @@ export default function ContactPage() {
 
                 <div>
                   <label
-                    htmlFor="email"
+                    htmlFor="from_email"
                     className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                   >
                     Email
                   </label>
                   <Input
-                    id="email"
-                    name="email"
+                    id="from_email"
+                    name="from_email"
                     type="email"
                     placeholder="Your email"
-                    value={formData.email}
+                    value={formData.from_email}
                     onChange={handleChange}
                     required
                     disabled={isSubmitting || isSubmitted}
