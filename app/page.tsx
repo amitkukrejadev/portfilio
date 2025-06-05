@@ -86,7 +86,10 @@ export default function Home() {
                   Amit Kukreja
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-                  Full Stack Developer
+                  <span>
+                    Frontend Developer • Full Stack Developer • Software
+                    Engineer
+                  </span>
                 </p>
               </div>
 
