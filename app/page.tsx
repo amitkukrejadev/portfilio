@@ -492,7 +492,7 @@ export default function Home() {
                       Bangalore, India
                     </CardDescription>
                     <div className="flex items-center gap-4 mt-2 text-sm text-gray-600 dark:text-gray-400">
-                      <span>Jul 2022 – Nov 2024 (Expected)</span>
+                      <span>Jul 2022 – Jan 2025 </span>
                       <span>•</span>
                       <span>SGPA: 8.67 | Percentage: 80.68%</span>
                     </div>
