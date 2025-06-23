@@ -86,10 +86,7 @@ export default function Home() {
                   Amit Kukreja
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-                  <span>
-                    Frontend Developer • Full Stack Developer • Software
-                    Engineer
-                  </span>
+                  <span>Frontend Developer </span>
                 </p>
               </div>
 
@@ -155,18 +152,20 @@ export default function Home() {
 
               <div className="space-y-4">
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Aspiring Full Stack Developer with hands-on experience
-                  building React/Next.js frontends and Node.js/MongoDB backends.
-                  Currently completing MCA at Jain University, and actively
-                  contributing to SaaS projects (VidSnap.AI, Fastify Auth
-                  Module).
+                  Full Stack Developer with hands-on experience building modern
+                  web applications using React/Next.js for frontends and
+                  Node.js/MongoDB for backends. Recently completed my MCA from
+                  Jain University and have contributed to real-world SaaS
+                  projects such as FrameGenie, DevFlow (a Q&A platform), and an
+                  event-driven SaaS system.
                 </p>
 
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Passionate about clean code, scalable architectures, and
-                  delivering pixel-perfect UIs. I believe in continuous learning
-                  and staying updated with the latest technologies to build
-                  innovative solutions that make a real impact.
+                  I’m passionate about writing clean, maintainable code,
+                  designing scalable architectures, and delivering pixel-perfect
+                  UIs. I believe in continuous learning and staying up to date
+                  with the latest technologies to create impactful and
+                  innovative solutions.
                 </p>
               </div>
 
@@ -780,12 +779,17 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg p-8 aspect-video flex items-center justify-center">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    VidSnap.AI
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <img
+                    src="/images/FrameGenie.jpeg"
+                    alt="FrameGenie"
+                    className="max-w-[90%] max-h-[90%] object-contain rounded-lg"
+                  />
+                  {/* <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    VidSnap.AI Hello
+                  </h3> */}
+                  {/* <p className="text-gray-600 dark:text-gray-300">
                     AI-Powered Video Processing
-                  </p>
+                  </p> */}
                 </div>
               </div>
               <div>
