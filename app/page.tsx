@@ -1,12 +1,28 @@
 "use client";
 
+import { VscCode } from "react-icons/vsc";
 import {
-  SiReact,
-  SiNextdotjs,
-  SiNodedotjs,
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaBootstrap,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaFigma,
+  FaDocker,
+} from "react-icons/fa";
+import {
   SiJavascript,
-  SiMongodb,
+  SiNextdotjs,
   SiTailwindcss,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiPrisma,
+  SiVercel,
+  SiFastify,
+  SiReact,
 } from "react-icons/si";
 import {
   Mail,
@@ -30,6 +46,8 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 export default function Home() {
+  const iconClasses = "text-4xl mb-2";
+
   const reactIconRef = useRef<HTMLDivElement>(null);
   const nextIconRef = useRef<HTMLDivElement>(null);
   const nodeIconRef = useRef<HTMLDivElement>(null);
@@ -81,6 +99,20 @@ export default function Home() {
     nextAnimation();
     nodeAnimation();
   }, []);
+
+  type SkillItemProps = {
+    icon: React.ReactNode;
+    label: string;
+  };
+
+  const SkillItem = ({ icon, label }: SkillItemProps) => (
+    <div className="flex flex-col items-center">
+      <div className="w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-2xl mb-2">
+        {icon}
+      </div>
+      <span className="text-sm text-gray-600 dark:text-gray-300">{label}</span>
+    </div>
+  );
 
   return (
     <div className="bg-white dark:bg-gray-950">
@@ -242,7 +274,7 @@ export default function Home() {
                   className="flex flex-col items-center group cursor-pointer"
                 >
                   <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl border border-green-200 dark:border-green-800">
-                    <SiNodedotjs className="text-green-600 dark:text-green-400 text-3xl" />
+                    <FaNodeJs className="text-green-600 dark:text-green-400 text-3xl" />
                   </div>
                   <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
                     Node.js
@@ -521,178 +553,113 @@ export default function Home() {
           </p>
 
           <div className="space-y-12">
+            {/* Front End */}
             <div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                 Front End
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-6">
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">JS</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    JavaScript
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <SiJavascript className={`${iconClasses} text-yellow-400`} />
+                  <span className="text-sm">JavaScript</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">⚛️</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    React.js
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <FaReact className={`${iconClasses} text-sky-500`} />
+                  <span className="text-sm">React.js</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-black dark:bg-gray-800 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl text-white">N</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    Next.js
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <SiNextdotjs
+                    className={`${iconClasses} text-black dark:text-white`}
+                  />
+                  <span className="text-sm">Next.js</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">HTML</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    HTML
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <FaHtml5 className={`${iconClasses} text-orange-600`} />
+                  <span className="text-sm">HTML</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">CSS</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    CSS
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <FaCss3Alt className={`${iconClasses} text-blue-600`} />
+                  <span className="text-sm">CSS</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">B</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    Bootstrap
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <FaBootstrap className={`${iconClasses} text-purple-600`} />
+                  <span className="text-sm">Bootstrap</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-cyan-100 dark:bg-cyan-900/30 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">TW</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    Tailwind CSS
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <SiTailwindcss className={`${iconClasses} text-cyan-500`} />
+                  <span className="text-sm">Tailwind CSS</span>
                 </div>
               </div>
             </div>
 
+            {/* Backend & Databases */}
             <div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                 Backend & Databases
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6">
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">🟢</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    Node.js
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <FaNodeJs className={`${iconClasses} text-green-600`} />
+                  <span className="text-sm">Node.js</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">Ex</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    Express.js
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <SiExpress className={`${iconClasses} text-gray-500`} />
+                  <span className="text-sm">Express.js</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-black dark:bg-gray-800 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl text-white">F</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    Fastify
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <SiFastify
+                    className={`${iconClasses} text-black dark:text-white`}
+                  />
+                  <span className="text-sm">Fastify</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">🍃</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    MongoDB
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <SiMongodb className={`${iconClasses} text-green-500`} />
+                  <span className="text-sm">MongoDB</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">🐘</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    PostgreSQL
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <SiPostgresql className={`${iconClasses} text-blue-500`} />
+                  <span className="text-sm">PostgreSQL</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">P</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    Prisma
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <SiPrisma className={`${iconClasses} text-indigo-500`} />
+                  <span className="text-sm">Prisma</span>
                 </div>
               </div>
             </div>
 
+            {/* Tools & Platforms */}
             <div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                 Tools & Platforms
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6">
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">🔶</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    Git
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <FaGitAlt className={`${iconClasses} text-orange-500`} />
+                  <span className="text-sm">Git</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">🐙</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    GitHub
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <FaGithub
+                    className={`${iconClasses} text-black dark:text-white`}
+                  />
+                  <span className="text-sm">GitHub</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">VS</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    VS Code
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <VscCode className={`${iconClasses} text-blue-500`} />
+                  <span className="text-sm">VS Code</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">F</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    Figma
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <FaFigma className={`${iconClasses} text-pink-500`} />
+                  <span className="text-sm">Figma</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-black dark:bg-gray-800 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl text-white">▲</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    Vercel
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <SiVercel
+                    className={`${iconClasses} text-black dark:text-white`}
+                  />
+                  <span className="text-sm">Vercel</span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-2">
-                    <span className="text-2xl">🐳</span>
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    Docker
-                  </span>
+                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
+                  <FaDocker className={`${iconClasses} text-blue-400`} />
+                  <span className="text-sm">Docker</span>
                 </div>
               </div>
             </div>
