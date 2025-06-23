@@ -3,6 +3,8 @@
 # Dependencies
 node_modules/
 
+/Users/amitkukreja/Coding/WebDevelopment/Web Development Projects/Projects/Portfilio/app/skills/page.md
+
 # Next.js build and output
 .next/
 out/

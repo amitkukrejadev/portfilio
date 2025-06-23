@@ -610,7 +610,7 @@ export default function Home() {
                   <SiFastify
                     className={`${iconClasses} text-black dark:text-white`}
                   />
-                  <span className="text-sm">Fastify</span>
+                  <span className="text-sm">React IMDb Clone</span>
                 </div>
                 <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
                   <SiMongodb className={`${iconClasses} text-green-500`} />
@@ -684,17 +684,11 @@ export default function Home() {
                     alt="FrameGenie"
                     className="max-w-[90%] max-h-[90%] object-contain rounded-lg"
                   />
-                  {/* <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    VidSnap.AI Hello
-                  </h3> */}
-                  {/* <p className="text-gray-600 dark:text-gray-300">
-                    AI-Powered Video Processing
-                  </p> */}
                 </div>
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  VidSnap.AI
+                  FrameGenie
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   AI-powered video processing platform with automated format
