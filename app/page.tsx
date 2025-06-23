@@ -1,6 +1,14 @@
 "use client";
 
 import {
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiJavascript,
+  SiMongodb,
+  SiTailwindcss,
+} from "react-icons/si";
+import {
   Mail,
   MapPin,
   Globe,
@@ -171,8 +179,16 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-4">
                 <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
-                  <Download className="w-4 h-4 mr-2" />
-                  Resume
+                  <a
+                    href="/resume/Frontend_Developer_amit_kukreja.pdf"
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    Resume
+                  </a>
                 </Button>
                 <Link href="/about">
                   <Button
@@ -202,7 +218,7 @@ export default function Home() {
                   className="flex flex-col items-center group cursor-pointer"
                 >
                   <div className="w-20 h-20 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl border border-blue-200 dark:border-blue-800">
-                    <span className="text-3xl">⚛️</span>
+                    <SiReact className="text-blue-500 dark:text-blue-300 text-3xl" />
                   </div>
                   <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
                     React.js
@@ -214,7 +230,7 @@ export default function Home() {
                   className="flex flex-col items-center group cursor-pointer"
                 >
                   <div className="w-20 h-20 bg-black dark:bg-gray-800 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl border border-gray-300 dark:border-gray-600">
-                    <span className="text-3xl text-white">N</span>
+                    <SiNextdotjs className="text-white text-3xl" />
                   </div>
                   <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
                     Next.js
@@ -226,7 +242,7 @@ export default function Home() {
                   className="flex flex-col items-center group cursor-pointer"
                 >
                   <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl border border-green-200 dark:border-green-800">
-                    <span className="text-3xl">🟢</span>
+                    <SiNodedotjs className="text-green-600 dark:text-green-400 text-3xl" />
                   </div>
                   <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
                     Node.js
@@ -235,7 +251,7 @@ export default function Home() {
 
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="w-20 h-20 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl border border-yellow-200 dark:border-yellow-800">
-                    <span className="text-3xl">JS</span>
+                    <SiJavascript className="text-yellow-500 dark:text-yellow-400 text-3xl" />
                   </div>
                   <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
                     JavaScript
@@ -244,7 +260,7 @@ export default function Home() {
 
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl border border-green-200 dark:border-green-800">
-                    <span className="text-3xl">🍃</span>
+                    <SiMongodb className="text-green-700 dark:text-green-400 text-3xl" />
                   </div>
                   <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
                     MongoDB
@@ -253,7 +269,7 @@ export default function Home() {
 
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="w-20 h-20 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl border border-cyan-200 dark:border-cyan-800">
-                    <span className="text-3xl">TW</span>
+                    <SiTailwindcss className="text-cyan-500 dark:text-cyan-300 text-3xl" />
                   </div>
                   <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
                     Tailwind
@@ -276,41 +292,43 @@ export default function Home() {
           </h2>
 
           <div className="space-y-8">
-            {/* Full Stack Intern - Coincent.ai */}
+            {/* Freelance Full Stack Developer */}
             <Card className="dark:border-gray-800 dark:bg-gray-950">
               <CardHeader>
                 <div className="flex justify-between items-start">
                   <div>
                     <CardTitle className="dark:text-white">
-                      Full Stack Intern
+                      Freelance Full Stack Developer
                     </CardTitle>
                     <CardDescription className="dark:text-gray-400">
-                      Coincent.ai (Remote)
+                      Self-Employed (Remote)
                     </CardDescription>
                   </div>
                   <span className="text-sm text-gray-500 dark:text-gray-400">
-                    Jan 2025 – Present
+                    Aug 2024 – Present
                   </span>
                 </div>
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 mb-4">
                   <li>
-                    Collaborated on building VidSnap.AI's front-end using
-                    Next.js, integrating Clerk for authentication and Cloudinary
-                    for media uploads.
+                    Built and deployed full-stack projects inspired by
+                    real-world use cases (e.g. AI video apps, CMS dashboards,
+                    e-commerce features).
                   </li>
                   <li>
-                    Implemented AI-powered preview generation and automated
-                    format conversions (Instagram, Twitter, Facebook).
+                    Integrated services like Clerk (auth) and Razorpay
+                    (payments); created REST APIs and serverless functions using
+                    Node.js.
                   </li>
                   <li>
-                    Wrote serverless functions in Node.js/Express to handle
-                    video-processing workflows.
+                    Managed data using Prisma ORM with MongoDB and PostgreSQL,
+                    deployed apps via Vercel/Netlify, and containerized services
+                    using Docker.
                   </li>
                   <li>
-                    Set up MongoDB data models via Mongoose and connected to
-                    NeonDB using Prisma.
+                    Wrote frontend tests using Jest and React Testing Library to
+                    ensure UI stability.
                   </li>
                 </ul>
                 <div className="flex flex-wrap gap-2">
@@ -336,84 +354,7 @@ export default function Home() {
                     variant="outline"
                     className="dark:border-gray-600 dark:text-gray-300"
                   >
-                    Prisma
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
                     MongoDB
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Cloudinary
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Clerk
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Backend Developer Intern - Pinnacle Labs */}
-            <Card className="dark:border-gray-800 dark:bg-gray-950">
-              <CardHeader>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle className="dark:text-white">
-                      Backend Developer Intern
-                    </CardTitle>
-                    <CardDescription className="dark:text-gray-400">
-                      Pinnacle Labs (Remote)
-                    </CardDescription>
-                  </div>
-                  <span className="text-sm text-gray-500 dark:text-gray-400">
-                    Jun 2024 – Dec 2024
-                  </span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 mb-4">
-                  <li>
-                    Developed RESTful APIs with Fastify and Express for a
-                    microservices-based SaaS template.
-                  </li>
-                  <li>
-                    Integrated PostgreSQL (NeonDB) through Prisma ORM to manage
-                    users, products, and events.
-                  </li>
-                  <li>
-                    Implemented JWT-based authentication middleware and
-                    role-based access controls.
-                  </li>
-                  <li>
-                    Containerized services using Docker and deployed to
-                    Vercel/Netlify for staging.
-                  </li>
-                </ul>
-                <div className="flex flex-wrap gap-2">
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Node.js
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Fastify
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Express.js
                   </Badge>
                   <Badge
                     variant="outline"
@@ -433,58 +374,11 @@ export default function Home() {
                   >
                     Docker
                   </Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Web Developer Intern - Oasis Infobyte */}
-            <Card className="dark:border-gray-800 dark:bg-gray-950">
-              <CardHeader>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle className="dark:text-white">
-                      Web Developer Intern
-                    </CardTitle>
-                    <CardDescription className="dark:text-gray-400">
-                      Oasis Infobyte (Remote)
-                    </CardDescription>
-                  </div>
-                  <span className="text-sm text-gray-500 dark:text-gray-400">
-                    Mar 2024 – May 2024
-                  </span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 mb-4">
-                  <li>
-                    Built responsive frontend components for a corporate CMS
-                    dashboard using React and Tailwind CSS.
-                  </li>
-                  <li>
-                    Integrated Razorpay payment gateway for demo e-commerce
-                    workflow (sandbox).
-                  </li>
-                  <li>
-                    Wrote unit tests in Jest/React Testing Library to ensure
-                    component reliability.
-                  </li>
-                  <li>
-                    Collaborated with UX designer to refine wireframes and
-                    improve user flows.
-                  </li>
-                </ul>
-                <div className="flex flex-wrap gap-2">
                   <Badge
                     variant="outline"
                     className="dark:border-gray-600 dark:text-gray-300"
                   >
-                    React.js
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Tailwind CSS
+                    Clerk
                   </Badge>
                   <Badge
                     variant="outline"
@@ -496,9 +390,51 @@ export default function Home() {
                     variant="outline"
                     className="dark:border-gray-600 dark:text-gray-300"
                   >
-                    JavaScript
+                    Jest
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="dark:border-gray-600 dark:text-gray-300"
+                  >
+                    Tailwind CSS
                   </Badge>
                 </div>
+              </CardContent>
+            </Card>
+
+            {/* Account Receivable Executive */}
+            <Card className="dark:border-gray-800 dark:bg-gray-950">
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle className="dark:text-white">
+                      Account Receivable Executive (Medical Billing)
+                    </CardTitle>
+                    <CardDescription className="dark:text-gray-400">
+                      IKS Health, Mumbai
+                    </CardDescription>
+                  </div>
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                    Jan 2023 – Aug 2024
+                  </span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 mb-4">
+                  <li>
+                    Managed end-to-end U.S. medical claims lifecycle, ensuring
+                    timely reimbursements for Florida-based healthcare
+                    providers.
+                  </li>
+                  <li>
+                    Reviewed, analyzed, and followed up on insurance claims to
+                    ensure accuracy and resolution.
+                  </li>
+                  <li>
+                    Coordinated with internal teams to streamline medical
+                    billing processes and resolve discrepancies.
+                  </li>
+                </ul>
               </CardContent>
             </Card>
           </div>
@@ -513,6 +449,7 @@ export default function Home() {
           </h2>
 
           <div className="space-y-8">
+            {/* Jain University */}
             <Card className="dark:border-gray-800 dark:bg-gray-950">
               <CardHeader>
                 <div className="flex items-start gap-4">
@@ -521,26 +458,26 @@ export default function Home() {
                   </div>
                   <div className="flex-1">
                     <CardTitle className="dark:text-white">
-                      Jain University — Master of Computer Applications (MCA)
+                      Jain University — Bangalore, India
                     </CardTitle>
                     <CardDescription className="dark:text-gray-400">
-                      Bangalore, India
+                      Master of Computer Applications · Jul 2022 – Jan 2025
                     </CardDescription>
-                    <div className="flex items-center gap-4 mt-2 text-sm text-gray-600 dark:text-gray-400">
-                      <span>Jul 2022 – Jan 2025 </span>
-                      <span>•</span>
-                      <span>SGPA: 8.67 | Percentage: 80.68%</span>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                      SGPA: 8.67 | Percentage: 80.68%
                     </div>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                      Key Subjects: Advanced Web Technologies, Python
-                      Development, Java Programming, Cloud Infrastructure, Big
-                      Data Analytics, AI/ML, DSA
+                      Relevant Coursework: Advanced Web Technologies, Python
+                      Programming, Java, Cloud Infrastructure, Big Data
+                      Analytics, Artificial Intelligence & Machine Learning,
+                      Data Structures and Algorithms
                     </p>
                   </div>
                 </div>
               </CardHeader>
             </Card>
 
+            {/* St. Paul College */}
             <Card className="dark:border-gray-800 dark:bg-gray-950">
               <CardHeader>
                 <div className="flex items-start gap-4">
@@ -549,21 +486,17 @@ export default function Home() {
                   </div>
                   <div className="flex-1">
                     <CardTitle className="dark:text-white">
-                      St. Paul College (Mumbai University) — Bachelor of
-                      Commerce (B.Com.), CBCS
+                      St. Paul College, University of Mumbai — Mumbai, India
                     </CardTitle>
                     <CardDescription className="dark:text-gray-400">
-                      Mumbai, India
+                      Bachelor of Commerce (CBCS) · Jul 2019 – Apr 2022
                     </CardDescription>
-                    <div className="flex items-center gap-4 mt-2 text-sm text-gray-600 dark:text-gray-400">
-                      <span>Jul 2019 – Apr 2022</span>
-                      <span>•</span>
-                      <span>CGPI: 8.94 | Percentage: 74.2%</span>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                      CGPI: 8.94 | Percentage: 74.2%
                     </div>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                      Key Subjects: Accountancy & Financial Management, Business
-                      Economics, Financial Accounting & Auditing, Business Law,
-                      Export Marketing
+                      Relevant Coursework: Financial Management, Business
+                      Economics, Auditing, Business Law, Export Marketing
                     </p>
                   </div>
                 </div>
