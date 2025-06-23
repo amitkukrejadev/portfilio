@@ -747,59 +747,61 @@ export default function Home() {
                     <li>Secure authentication with Clerk</li>
                   </ul>
                 </div>
-                <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
-                  Live Demo
-                </Button>
+                <a
+                  href="https://github.com/amitkukrejadev/framegenie"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 dark:hover:text-black">
+                    View on GitHub
+                  </Button>
+                </a>
               </div>
             </div>
 
-            {/* Fastify Auth Module */}
+            {/* React IMDb Clone Module */}
             <div className="grid lg:grid-cols-2 gap-8 items-center">
+              {/* Left Side: Project Details */}
               <div className="order-2 lg:order-1">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  Fastify Auth Module
+                  React IMDb Clone
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  Comprehensive authentication module for Fastify applications
-                  with JWT-based authentication, role-based access controls, and
-                  microservices architecture.
+                  A hands-on IMDb clone using real TMDb APIs, routing, and
+                  dynamic UI components built in React. Ideal for learning
+                  practical frontend skills like state management, routing,
+                  search functionality, and API integration.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge
                     variant="outline"
                     className="dark:border-gray-600 dark:text-gray-300"
                   >
-                    Node.js
+                    React.js
                   </Badge>
                   <Badge
                     variant="outline"
                     className="dark:border-gray-600 dark:text-gray-300"
                   >
-                    Fastify
+                    TMDb API
                   </Badge>
                   <Badge
                     variant="outline"
                     className="dark:border-gray-600 dark:text-gray-300"
                   >
-                    PostgreSQL
+                    React Router
                   </Badge>
                   <Badge
                     variant="outline"
                     className="dark:border-gray-600 dark:text-gray-300"
                   >
-                    Prisma
+                    JavaScript
                   </Badge>
                   <Badge
                     variant="outline"
                     className="dark:border-gray-600 dark:text-gray-300"
                   >
-                    Docker
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    JWT
+                    CSS
                   </Badge>
                 </div>
                 <div className="space-y-2 mb-4">
@@ -807,48 +809,55 @@ export default function Home() {
                     Key Features:
                   </h4>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                    <li>RESTful API architecture</li>
-                    <li>JWT-based authentication middleware</li>
-                    <li>Role-based access controls</li>
-                    <li>Containerized microservices</li>
+                    <li>Real API integration using TMDb</li>
+                    <li>Dynamic routing for movie details</li>
+                    <li>Search functionality and favorites</li>
+                    <li>Movie cards with posters, ratings, and info</li>
                   </ul>
                 </div>
-                <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
-                  View Code
-                </Button>
+                <a
+                  href="https://github.com/amitkukrejadev/React-IMDb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
+                    View Source Code
+                  </Button>
+                </a>
               </div>
-              <div className="order-1 lg:order-2 bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 rounded-lg p-8 aspect-video flex items-center justify-center">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    Auth Module
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Fastify Authentication System
-                  </p>
+
+              {/* Right Side: Project Image */}
+              <div className="order-1 lg:order-2 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg p-4 flex items-center justify-center">
+                <div className="w-[90%] h-[90%] rounded-lg overflow-hidden shadow-md border dark:border-gray-700">
+                  <img
+                    src="/projects/imdb-clone-preview.png" // 👈 Replace this with your actual image path
+                    alt="IMDb Clone Project Preview"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
 
             {/* E-commerce Dashboard */}
             <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-lg p-8 aspect-video flex items-center justify-center">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    E-commerce CMS
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Corporate Dashboard
-                  </p>
-                </div>
+              {/* Left: Image block */}
+              <div className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-lg p-4 aspect-video flex items-center justify-center">
+                <img
+                  src="/projects/url-shortener.png" // 👈 Replace with actual image path
+                  alt="URL Shortener App"
+                  className="rounded-lg object-contain w-[90%] h-[90%]"
+                />
               </div>
+
+              {/* Right: Content block */}
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  E-commerce CMS Dashboard
+                  URL Shortener
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  Responsive corporate CMS dashboard with integrated payment
-                  gateway, comprehensive testing suite, and optimized user
-                  experience design.
+                  A compact and minimalistic URL shortener built with React.
+                  Offers optional backend integration, clean UX, and clipboard
+                  support for quick sharing.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge
@@ -867,19 +876,13 @@ export default function Home() {
                     variant="outline"
                     className="dark:border-gray-600 dark:text-gray-300"
                   >
-                    Razorpay
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Jest
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
                     JavaScript
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="dark:border-gray-600 dark:text-gray-300"
+                  >
+                    Firebase (Optional)
                   </Badge>
                 </div>
                 <div className="space-y-2 mb-4">
@@ -887,15 +890,21 @@ export default function Home() {
                     Key Features:
                   </h4>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                    <li>Responsive frontend components</li>
-                    <li>Razorpay payment integration</li>
-                    <li>Comprehensive unit testing</li>
-                    <li>UX-optimized user flows</li>
+                    <li>Generates short URLs instantly</li>
+                    <li>Clipboard copy functionality</li>
+                    <li>Minimalist UI/UX with responsive design</li>
+                    <li>Optional backend support (e.g. Firebase)</li>
                   </ul>
                 </div>
-                <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
-                  Live Demo
-                </Button>
+                <a
+                  href="https://github.com/amitkukrejadev/url-shortener"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
+                    View Code
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
