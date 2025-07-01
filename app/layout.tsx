@@ -17,19 +17,19 @@ export const metadata: Metadata = {
     title: "Amit Kukreja | Frontend Developer",
     description:
       "Frontend-focused Developer with growing full-stack proficiency. Passionate about clean, functional code and delivering web solutions using modern tools and continuous learning.",
-    url: "https://www.linkedin.com/in/amitkukrejadev/",
+    url: "https://amitkukreja.vercel.app",
     siteName: "Amit Kukreja Portfolio",
     type: "website",
     images: [
       {
-        url: "/images/portfilio-image.png",
+        url: "https://amitkukreja.vercel.app/images/portfolio-image.png",
         width: 1200,
         height: 630,
         alt: "Amit Kukreja | Frontend Developer Portfolio",
       },
     ],
   },
-  metadataBase: new URL("https://peerlist.io/amitkukreja/"),
+  metadataBase: new URL("https://amitkukreja.vercel.app"),
 };
 
 export default function RootLayout({
