@@ -10,9 +10,26 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Amit Kukreja | Full Stack Developer",
+  title: "Amit Kukreja | Frontend Developer",
   description:
-    "Portfolio website of Amit Kukreja, a Full Stack Developer specializing in React, Next.js, Node.js and more.",
+    "Frontend-focused Developer with growing full-stack proficiency. Passionate about clean, functional code and delivering web solutions using modern tools and continuous learning.",
+  openGraph: {
+    title: "Amit Kukreja | Frontend Developer",
+    description:
+      "Frontend-focused Developer with growing full-stack proficiency. Passionate about clean, functional code and delivering web solutions using modern tools and continuous learning.",
+    url: "https://www.linkedin.com/in/amitkukrejadev/",
+    siteName: "Amit Kukreja Portfolio",
+    type: "website",
+    images: [
+      {
+        url: "/images/portfilio-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Amit Kukreja | Frontend Developer Portfolio",
+      },
+    ],
+  },
+  metadataBase: new URL("https://peerlist.io/amitkukreja/"),
 };
 
 export default function RootLayout({
@@ -30,6 +47,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
