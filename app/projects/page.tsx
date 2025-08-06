@@ -17,47 +17,54 @@ export default function ProjectsPage() {
           </p>
 
           <div className="space-y-16">
-            {/* VidSnap.AI Project */}
+            {/* FrameGenie (originally VidSnap.AI) */}
             <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg p-8 aspect-video flex items-center justify-center">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    FrameGenie
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    AI-Powered Video Processing
-                  </p>
-                </div>
+              <div
+                className="rounded-lg p-8 aspect-video flex items-center justify-center bg-cover bg-center"
+                style={{ backgroundImage: `url('/images/FrameGenie.jpeg')` }}
+              >
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  VidSnap.AI
+                  FrameGenie
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  AI-powered video processing platform with automated format
-                  conversions for social media platforms. Features intelligent
-                  preview generation and seamless media management.
+                  FrameGenie is a cutting-edge, full-stack SaaS platform that
+                  empowers users to create AI-powered movie posters using simple
+                  prompts. This project offers a seamless experience for
+                  generating, saving, and managing stunning visual content with
+                  advanced features.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="outline">Next.js</Badge>
-                  <Badge variant="outline">Node.js</Badge>
+                  <Badge variant="outline">Next.js 14</Badge>
+                  <Badge variant="outline">React</Badge>
+                  <Badge variant="outline">Tailwind CSS</Badge>
                   <Badge variant="outline">Clerk</Badge>
-                  <Badge variant="outline">Cloudinary</Badge>
-                  <Badge variant="outline">MongoDB</Badge>
                   <Badge variant="outline">Prisma</Badge>
+                  <Badge variant="outline">PostgreSQL</Badge>
+                  <Badge variant="outline">Cloudinary</Badge>
                 </div>
                 <div className="space-y-2 mb-6">
                   <h4 className="font-semibold dark:text-white">
                     Key Features:
                   </h4>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                    <li>AI-powered preview generation</li>
                     <li>
-                      Automated format conversions (Instagram, Twitter,
-                      Facebook)
+                      Generate stunning movie posters with AI-powered prompts
                     </li>
-                    <li>Serverless video processing workflows</li>
-                    <li>Secure authentication with Clerk</li>
+                    <li>
+                      Secure authentication and user management with Clerk
+                    </li>
+                    <li>
+                      Save, view, and delete generated posters effortlessly
+                    </li>
+                    <li>
+                      Upload custom poster images via Cloudinary integration
+                    </li>
+                    <li>
+                      Responsive and beautiful UI designed with Tailwind CSS
+                    </li>
+                    <li>Ready for OpenAI integration in the backend logic</li>
                   </ul>
                 </div>
                 <div className="space-y-2 mb-6">
@@ -65,20 +72,34 @@ export default function ProjectsPage() {
                     Technical Challenges:
                   </h4>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Implementing efficient video processing pipelines that could
-                    handle large files while maintaining performance. Solved by
-                    creating a serverless architecture with chunked uploads and
-                    background processing.
+                    One of the main challenges was optimizing the AI-powered
+                    poster generation to handle diverse prompts efficiently
+                    while ensuring fast load times. This was addressed by
+                    leveraging Next.js Server Actions and Edge Functions,
+                    combined with Cloudinary for scalable image storage and
+                    processing.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
+                    <a
+                      href="https://framegenie.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Live Demo
+                    </a>
                   </Button>
                   <Button variant="outline">
                     <Github className="w-4 h-4 mr-2" />
-                    View Code
+                    <a
+                      href="https://github.com/amitkukrejadev/framegenie"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Code
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -128,7 +149,13 @@ export default function ProjectsPage() {
                 <div className="flex flex-wrap gap-4">
                   <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
                     <Github className="w-4 h-4 mr-2" />
-                    View Code
+                    <a
+                      href="https://github.com/amitkukrejadev/fastify-auth"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Code
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -144,7 +171,7 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            {/* E-commerce Dashboard */}
+            {/* E-commerce CMS Dashboard */}
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-lg p-8 aspect-video flex items-center justify-center">
                 <div className="text-center">
@@ -197,84 +224,116 @@ export default function ProjectsPage() {
                 <div className="flex flex-wrap gap-4">
                   <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
+                    <a
+                      href="https://ecommerce-cms.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Live Demo
+                    </a>
                   </Button>
                   <Button variant="outline">
                     <Github className="w-4 h-4 mr-2" />
-                    View Code
+                    <a
+                      href="https://github.com/amitkukrejadev/ecommerce-cms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Code
+                    </a>
                   </Button>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="mt-16">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-              Academic Projects
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="dark:border-gray-800">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                    Task Management App
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    A full-stack task management application with user
-                    authentication, task categories, and deadline notifications.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <Badge variant="outline">React</Badge>
-                    <Badge variant="outline">Express</Badge>
-                    <Badge variant="outline">MongoDB</Badge>
-                  </div>
-                  <Button variant="outline" size="sm" className="w-full">
-                    <Github className="w-4 h-4 mr-2" />
-                    View Code
-                  </Button>
-                </CardContent>
-              </Card>
+            {/* Academic Projects */}
+            <div className="mt-16">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+                Academic Projects
+              </h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Card className="dark:border-gray-800">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                      Task Management App
+                    </h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4">
+                      A full-stack task management application with user
+                      authentication, task categories, and deadline
+                      notifications.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <Badge variant="outline">React</Badge>
+                      <Badge variant="outline">Express</Badge>
+                      <Badge variant="outline">MongoDB</Badge>
+                    </div>
+                    <Button variant="outline" size="sm" className="w-full">
+                      <Github className="w-4 h-4 mr-2" />
+                      <a
+                        href="https://github.com/amitkukrejadev/task-manager"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Code
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
 
-              <Card className="dark:border-gray-800">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                    Weather Dashboard
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    A weather application that displays current and forecasted
-                    weather data using the OpenWeatherMap API.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <Badge variant="outline">JavaScript</Badge>
-                    <Badge variant="outline">HTML/CSS</Badge>
-                    <Badge variant="outline">API Integration</Badge>
-                  </div>
-                  <Button variant="outline" size="sm" className="w-full">
-                    <Github className="w-4 h-4 mr-2" />
-                    View Code
-                  </Button>
-                </CardContent>
-              </Card>
+                <Card className="dark:border-gray-800">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                      Weather Dashboard
+                    </h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4">
+                      A weather application that displays current and forecasted
+                      weather data using the OpenWeatherMap API.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <Badge variant="outline">JavaScript</Badge>
+                      <Badge variant="outline">HTML/CSS</Badge>
+                      <Badge variant="outline">API Integration</Badge>
+                    </div>
+                    <Button variant="outline" size="sm" className="w-full">
+                      <Github className="w-4 h-4 mr-2" />
+                      <a
+                        href="https://github.com/amitkukrejadev/weather-dashboard"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Code
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
 
-              <Card className="dark:border-gray-800">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                    E-Learning Platform
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    A prototype e-learning platform with course listings, user
-                    enrollment, and progress tracking.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <Badge variant="outline">Next.js</Badge>
-                    <Badge variant="outline">Tailwind</Badge>
-                    <Badge variant="outline">Supabase</Badge>
-                  </div>
-                  <Button variant="outline" size="sm" className="w-full">
-                    <Github className="w-4 h-4 mr-2" />
-                    View Code
-                  </Button>
-                </CardContent>
-              </Card>
+                <Card className="dark:border-gray-800">
+                  <CardContent className="pt-6">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                      E-Learning Platform
+                    </h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4">
+                      A prototype e-learning platform with course listings, user
+                      enrollment, and progress tracking.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <Badge variant="outline">Next.js</Badge>
+                      <Badge variant="outline">Tailwind</Badge>
+                      <Badge variant="outline">Supabase</Badge>
+                    </div>
+                    <Button variant="outline" size="sm" className="w-full">
+                      <Github className="w-4 h-4 mr-2" />
+                      <a
+                        href="https://github.com/amitkukrejadev/elearning-platform"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Code
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
