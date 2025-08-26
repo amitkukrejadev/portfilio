@@ -22,8 +22,7 @@ export default function ProjectsPage() {
               <div
                 className="rounded-lg p-8 aspect-video flex items-center justify-center bg-cover bg-center"
                 style={{ backgroundImage: `url('/images/FrameGenie.jpeg')` }}
-              >
-              </div>
+              ></div>
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   FrameGenie
