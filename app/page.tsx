@@ -25,7 +25,16 @@ import {
   SiFastify,
   SiReact,
 } from "react-icons/si";
-import { Mail, Users, Download, ExternalLink, MapPin } from "lucide-react";
+import {
+  Mail,
+  Users,
+  Download,
+  ExternalLink,
+  MapPin,
+  Twitter,
+  Github,
+  Linkedin,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -187,7 +196,6 @@ export default function Home() {
                     impactful and innovative solutions.
                   </p>
                 </div>
-
                 <div className="flex items-center gap-4 mb-6">
                   <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
                     <a
@@ -202,52 +210,44 @@ export default function Home() {
                     </a>
                   </Button>
                   <a
+                    href="https://github.com/amitkukrejadev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
+                    <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                      <Github className="w-5 h-5 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100" />
+                    </div>
+                  </a>
+                  <a
                     href="mailto:amitkukrejadev@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center"
                   >
-                    <Mail className="w-8 h-8 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 stroke-2" />
-                  </a>
-                  {/* <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    <MapPin className="w-8 h-8 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 stroke-2" />
+                    <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                      <Mail className="w-5 h-5 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100" />
+                    </div>
                   </a>
                   <a
-                    href="https://amitkukrejadev.vercel.app"
+                    href="https://twitter.com/amitkukrejadev"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center"
                   >
-                    <Globe className="w-8 h-8 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 stroke-2" />
-                  </a> */}
+                    <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                      <Twitter className="w-5 h-5 text-gray-600 dark:text-gray-300 hover:text-blue-400 dark:hover:text-blue-300" />
+                    </div>
+                  </a>
                   <a
                     href="https://linkedin.com/in/amitkukrejadev"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center"
                   >
-                    <FaLinkedin className="w-8 h-8 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400" />
-                  </a>
-                  <a
-                    href="https://github.com/amitkukrejadev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    <FaGithub className="w-8 h-8 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100" />
-                  </a>
-                  <a
-                    href="https://peerlist.io/amitkukreja"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    <Users className="w-8 h-8 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 stroke-2" />
+                    <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                      <Linkedin className="w-5 h-5 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400" />
+                    </div>
                   </a>
                 </div>
               </div>
