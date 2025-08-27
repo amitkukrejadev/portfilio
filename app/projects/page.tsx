@@ -1,9 +1,39 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Github } from "lucide-react";
+import { useEffect } from "react";
 
 export default function ProjectsPage() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            entry.target.classList.remove("opacity-0", "translate-y-10");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const sections = document.querySelectorAll("section, .card-to-observe");
+    sections.forEach((section) => {
+      section.classList.add(
+        "opacity-0",
+        "translate-y-10",
+        "transition-all",
+        "duration-1000"
+      );
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="bg-white dark:bg-gray-950">
       <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -20,10 +50,10 @@ export default function ProjectsPage() {
             {/* FrameGenie (Image on Left) */}
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div
-                className="rounded-lg p-8 aspect-video flex items-center justify-center bg-cover bg-center"
+                className="rounded-lg p-8 aspect-video flex items-center justify-center bg-cover bg-center card-to-observe"
                 style={{ backgroundImage: `url('/images/FrameGenie.jpeg')` }}
               ></div>
-              <div>
+              <div className="card-to-observe">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   FrameGenie
                 </h3>
@@ -106,7 +136,7 @@ export default function ProjectsPage() {
 
             {/* Event-Driven Web App (Text on Right) */}
             <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className="order-2 lg:order-1">
+              <div className="order-2 lg:order-1 card-to-observe">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   Event-Driven Web App
                 </h3>
@@ -169,7 +199,7 @@ export default function ProjectsPage() {
                   </Button>
                 </div>
               </div>
-              <div className="order-1 lg:order-2 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg p-8 aspect-video flex items-center justify-center">
+              <div className="order-1 lg:order-2 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg p-8 aspect-video flex items-center justify-center card-to-observe">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                     Event-Driven App
@@ -183,7 +213,7 @@ export default function ProjectsPage() {
 
             {/* Q&A Full-Stack Platform (Text on Left) */}
             <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-lg p-8 aspect-video flex items-center justify-center">
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-lg p-8 aspect-video flex items-center justify-center card-to-observe">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                     Q&A Platform
@@ -193,7 +223,7 @@ export default function ProjectsPage() {
                   </p>
                 </div>
               </div>
-              <div>
+              <div className="card-to-observe">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   Q&A Full-Stack Platform
                 </h3>
@@ -257,7 +287,7 @@ export default function ProjectsPage() {
 
             {/* Secure LMS (Text on Right) */}
             <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className="order-2 lg:order-1">
+              <div className="order-2 lg:order-1 card-to-observe">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   Secure LMS
                 </h3>
@@ -318,7 +348,7 @@ export default function ProjectsPage() {
                   </Button>
                 </div>
               </div>
-              <div className="order-1 lg:order-2 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-lg p-8 aspect-video flex items-center justify-center">
+              <div className="order-1 lg:order-2 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-lg p-8 aspect-video flex items-center justify-center card-to-observe">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                     Secure LMS
@@ -336,7 +366,7 @@ export default function ProjectsPage() {
                 Academic Projects
               </h2>
               <div className="grid grid-cols-2 gap-6">
-                <Card className="dark:border-gray-800">
+                <Card className="dark:border-gray-800 card-to-observe">
                   <CardContent className="pt-6">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                       Expense Tracker
@@ -378,7 +408,7 @@ export default function ProjectsPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="dark:border-gray-800">
+                <Card className="dark:border-gray-800 card-to-observe">
                   <CardContent className="pt-6">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                       To-Do App
@@ -420,7 +450,7 @@ export default function ProjectsPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="dark:border-gray-800">
+                <Card className="dark:border-gray-800 card-to-observe">
                   <CardContent className="pt-6">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                       Quiz App
@@ -461,7 +491,7 @@ export default function ProjectsPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="dark:border-gray-800">
+                <Card className="dark:border-gray-800 card-to-observe">
                   <CardContent className="pt-6">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                       Weather Dashboard

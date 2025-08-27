@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -39,16 +39,15 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      // Send email using EmailJS
       await emailjs.send(
-        "service_hi5np87", // Your Service ID
-        "template_dlkaikm", // Your Template ID
+        "service_hi5np87",
+        "template_dlkaikm",
         {
           from_name: formData.from_name,
           from_email: formData.from_email,
           message: formData.message,
         },
-        "Bzx4RSJl5hX5rH9Wh" // Your Public Key
+        "Bzx4RSJl5hX5rH9Wh"
       );
 
       setIsSubmitting(false);
@@ -58,7 +57,6 @@ export default function ContactPage() {
         description: "Thank you for your message. I'll get back to you soon.",
       });
 
-      // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false);
         setFormData({ from_name: "", from_email: "", message: "" });
@@ -75,6 +73,49 @@ export default function ContactPage() {
     }
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            entry.target.classList.remove("opacity-0", "translate-y-10");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px 50px 0px" } // Added rootMargin to trigger earlier
+    );
+
+    // Apply animation classes and observe elements
+    const applyAnimation = () => {
+      const sections = document.querySelectorAll("section, .card-to-observe");
+      if (sections.length > 0) {
+        sections.forEach((section) => {
+          section.classList.add(
+            "opacity-0",
+            "translate-y-10",
+            "transition-all",
+            "duration-1000"
+          );
+          observer.observe(section);
+        });
+      } else {
+        console.log(
+          "No elements found with selector 'section, .card-to-observe'"
+        );
+      }
+    };
+
+    // Run immediately and after a slight delay
+    applyAnimation();
+    const timer = setTimeout(applyAnimation, 100);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <div className="bg-white dark:bg-gray-950">
       <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -88,11 +129,10 @@ export default function ContactPage() {
           </p>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            <div>
+            <div className="card-to-observe">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                 Get In Touch
               </h3>
-
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
@@ -108,7 +148,6 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </div>
-
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
                     <MapPin className="w-5 h-5" />
@@ -120,7 +159,6 @@ export default function ContactPage() {
                     </p>
                   </div>
                 </div>
-
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
                     <Linkedin className="w-5 h-5" />
@@ -137,7 +175,6 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </div>
-
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
                     <Github className="w-5 h-5" />
@@ -154,7 +191,6 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </div>
-
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
                     <Users className="w-5 h-5" />
@@ -172,7 +208,6 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-
               <div className="mt-12">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                   Availability
@@ -184,12 +219,10 @@ export default function ContactPage() {
                 </p>
               </div>
             </div>
-
-            <div>
+            <div className="card-to-observe">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                 Send Me a Message
               </h3>
-
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label
@@ -209,7 +242,6 @@ export default function ContactPage() {
                     className="dark:border-gray-700"
                   />
                 </div>
-
                 <div>
                   <label
                     htmlFor="from_email"
@@ -229,7 +261,6 @@ export default function ContactPage() {
                     className="dark:border-gray-700"
                   />
                 </div>
-
                 <div>
                   <label
                     htmlFor="message"
@@ -249,7 +280,6 @@ export default function ContactPage() {
                     className="dark:border-gray-700"
                   />
                 </div>
-
                 <Button
                   type="submit"
                   className="w-full bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"

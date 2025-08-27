@@ -1,3 +1,5 @@
+"use client";
+
 import {
   SiNodedotjs,
   SiExpress,
@@ -18,9 +20,37 @@ import {
   SiCss3,
   SiBootstrap,
 } from "react-icons/si";
+import { useEffect } from "react";
 
 export default function SkillsPage() {
-return (
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            entry.target.classList.remove("opacity-0", "translate-y-10");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const sections = document.querySelectorAll("section, .card-to-observe");
+    sections.forEach((section) => {
+      section.classList.add(
+        "opacity-0",
+        "translate-y-10",
+        "transition-all",
+        "duration-1000"
+      );
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
     <div className="bg-white dark:bg-gray-950">
       <div>
         <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -41,7 +71,7 @@ return (
                       Front End
                     </h2>
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                         <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                           <SiReact className="text-2xl text-blue-600 dark:text-blue-400" />
                         </div>
@@ -59,7 +89,7 @@ return (
                         </p>
                       </div>
 
-                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                         <div className="w-16 h-16 bg-black dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 mx-auto">
                           <SiNextdotjs className="text-2xl text-white" />
                         </div>
@@ -77,7 +107,7 @@ return (
                         </p>
                       </div>
 
-                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                         <div className="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                           <SiJavascript className="text-2xl text-yellow-500" />
                         </div>
@@ -95,7 +125,7 @@ return (
                         </p>
                       </div>
 
-                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                         <div className="w-16 h-16 bg-cyan-100 dark:bg-cyan-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                           <SiTailwindcss className="text-2xl text-cyan-500" />
                         </div>
@@ -113,7 +143,7 @@ return (
                         </p>
                       </div>
 
-                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                         <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                           <SiHtml5 className="text-2xl text-orange-500" />
                         </div>
@@ -131,7 +161,7 @@ return (
                         </p>
                       </div>
 
-                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                         <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                           <SiCss3 className="text-2xl text-blue-600" />
                         </div>
@@ -149,7 +179,7 @@ return (
                         </p>
                       </div>
 
-                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                         <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                           <SiBootstrap className="text-2xl text-purple-600" />
                         </div>
@@ -177,7 +207,7 @@ return (
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                   {/* Node.js */}
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                     <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                       <SiNodedotjs className="text-2xl text-green-600" />
                     </div>
@@ -195,7 +225,7 @@ return (
                     </p>
                   </div>
                   {/* Express.js */}
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                     <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 mx-auto">
                       <SiExpress className="text-2xl text-gray-700 dark:text-white" />
                     </div>
@@ -205,15 +235,15 @@ return (
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                       <div
                         className="bg-blue-600 h-2.5 rounded-full"
-                        style={{ width: "80%" }}
+                        style={{ width: "50%" }}
                       ></div>
                     </div>
                     <p className="text-xs text-center mt-2 text-gray-500 dark:text-gray-400">
-                      Proficient
+                      Intermediate
                     </p>
                   </div>
                   {/* Fastify */}
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                     <div className="w-16 h-16 bg-black dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 mx-auto">
                       <SiFastify className="text-2xl text-white" />
                     </div>
@@ -223,15 +253,15 @@ return (
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                       <div
                         className="bg-blue-600 h-2.5 rounded-full"
-                        style={{ width: "75%" }}
+                        style={{ width: "50%" }}
                       ></div>
                     </div>
                     <p className="text-xs text-center mt-2 text-gray-500 dark:text-gray-400">
-                      Proficient
+                      Intermediate
                     </p>
                   </div>
                   {/* MongoDB */}
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                     <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                       <SiMongodb className="text-2xl text-green-600" />
                     </div>
@@ -249,7 +279,7 @@ return (
                     </p>
                   </div>
                   {/* PostgreSQL */}
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                     <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                       <SiPostgresql className="text-2xl text-blue-600" />
                     </div>
@@ -259,15 +289,15 @@ return (
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                       <div
                         className="bg-blue-600 h-2.5 rounded-full"
-                        style={{ width: "75%" }}
+                        style={{ width: "50%" }}
                       ></div>
                     </div>
                     <p className="text-xs text-center mt-2 text-gray-500 dark:text-gray-400">
-                      Proficient
+                      Intermediate
                     </p>
                   </div>
                   {/* Prisma */}
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                     <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 mx-auto">
                       <SiPrisma className="text-2xl text-gray-800 dark:text-white" />
                     </div>
@@ -277,11 +307,11 @@ return (
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                       <div
                         className="bg-blue-600 h-2.5 rounded-full"
-                        style={{ width: "80%" }}
+                        style={{ width: "50%" }}
                       ></div>
                     </div>
                     <p className="text-xs text-center mt-2 text-gray-500 dark:text-gray-400">
-                      Proficient
+                      Intermediate
                     </p>
                   </div>
                 </div>
@@ -293,7 +323,7 @@ return (
                 </h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
                   {/* Git */}
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                     <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                       <SiGit className="text-2xl text-orange-600" />
                     </div>
@@ -311,7 +341,7 @@ return (
                     </p>
                   </div>
                   {/* GitHub */}
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                     <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 mx-auto">
                       <SiGithub className="text-2xl text-gray-800 dark:text-white" />
                     </div>
@@ -329,7 +359,7 @@ return (
                     </p>
                   </div>
                   {/* VS Code */}
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                     <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                       <SiVscodium className="text-2xl text-blue-600" />
                     </div>
@@ -347,7 +377,7 @@ return (
                     </p>
                   </div>
                   {/* Vercel */}
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                     <div className="w-16 h-16 bg-black dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 mx-auto">
                       <SiVercel className="text-2xl text-white" />
                     </div>
@@ -357,15 +387,15 @@ return (
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                       <div
                         className="bg-blue-600 h-2.5 rounded-full"
-                        style={{ width: "85%" }}
+                        style={{ width: "50%" }}
                       ></div>
                     </div>
                     <p className="text-xs text-center mt-2 text-gray-500 dark:text-gray-400">
-                      Advanced
+                      Intermediate
                     </p>
                   </div>
                   {/* Docker */}
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-to-observe">
                     <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                       <SiDocker className="text-2xl text-blue-600" />
                     </div>
@@ -375,11 +405,11 @@ return (
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                       <div
                         className="bg-blue-600 h-2.5 rounded-full"
-                        style={{ width: "70%" }}
+                        style={{ width: "50%" }}
                       ></div>
                     </div>
                     <p className="text-xs text-center mt-2 text-gray-500 dark:text-gray-400">
-                      Proficient
+                      Intermediate
                     </p>
                   </div>
                 </div>
@@ -388,7 +418,6 @@ return (
           </div>
         </section>
       </div>
-      );
     </div>
   );
 }

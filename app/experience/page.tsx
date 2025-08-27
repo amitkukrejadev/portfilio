@@ -1,7 +1,43 @@
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+"use client";
+
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { useEffect } from "react";
 
 export default function ExperiencePage() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            entry.target.classList.remove("opacity-0", "translate-y-10");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const sections = document.querySelectorAll("section, .card-to-observe");
+    sections.forEach((section) => {
+      section.classList.add(
+        "opacity-0",
+        "translate-y-10",
+        "transition-all",
+        "duration-1000"
+      );
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="bg-white dark:bg-gray-950">
       <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -14,7 +50,7 @@ export default function ExperiencePage() {
           </p>
           <div className="space-y-8">
             {/* Freelance Full Stack Developer */}
-            <Card className="dark:border-gray-800 dark:bg-gray-950">
+            <Card className="dark:border-gray-800 dark:bg-gray-950 card-to-observe">
               <CardHeader>
                 <div className="flex justify-between items-start">
                   <div>
@@ -124,7 +160,7 @@ export default function ExperiencePage() {
             </Card>
 
             {/* Account Receivable Executive */}
-            <Card className="dark:border-gray-800 dark:bg-gray-950">
+            <Card className="dark:border-gray-800 dark:bg-gray-950 card-to-observe">
               <CardHeader>
                 <div className="flex justify-between items-start">
                   <div>
