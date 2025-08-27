@@ -8,9 +8,10 @@ import {
   FaBootstrap,
   FaNodeJs,
   FaGitAlt,
-  FaGithub,
   FaFigma,
   FaDocker,
+  FaLinkedin,
+  FaGithub,
 } from "react-icons/fa";
 import {
   SiJavascript,
@@ -26,12 +27,9 @@ import {
 } from "react-icons/si";
 import {
   Mail,
-  MapPin,
-  Globe,
-  Linkedin,
-  Github,
   Users,
   Download,
+  ExternalLink,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -103,16 +101,50 @@ export default function Home() {
   type SkillItemProps = {
     icon: React.ReactNode;
     label: string;
+    refProp?: React.RefObject<HTMLDivElement | null>;
   };
 
-  const SkillItem = ({ icon, label }: SkillItemProps) => (
-    <div className="flex flex-col items-center">
-      <div className="w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-2xl mb-2">
+  const SkillItem = ({ icon, label, refProp }: SkillItemProps) => (
+    <div
+      ref={refProp}
+      className="flex flex-col items-center group cursor-pointer"
+    >
+      <div className="w-24 h-24 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl">
         {icon}
       </div>
-      <span className="text-sm text-gray-600 dark:text-gray-300">{label}</span>
+      <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
+        {label}
+      </span>
     </div>
   );
+
+  // Scroll animation setup
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            entry.target.classList.remove("opacity-0", "translate-y-10");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => {
+      section.classList.add(
+        "opacity-0",
+        "translate-y-10",
+        "transition-all",
+        "duration-1000"
+      );
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="bg-white dark:bg-gray-950">
@@ -130,183 +162,143 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                  <Mail className="w-4 h-4" />
+              <div className="space-y-4">
+                <div className="space-y-4">
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Full Stack Developer with hands-on experience building
+                    modern web applications using React/Next.js for frontends
+                    and Node.js/MongoDB for backends. Recently completed my MCA
+                    from Jain University and have contributed to real-world SaaS
+                    projects such as FrameGenie, DevFlow (a Q&A platform), and
+                    an event-driven SaaS system.
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    I’m passionate about writing clean, maintainable code,
+                    designing scalable architectures, and delivering
+                    pixel-perfect UIs. I believe in continuous learning and
+                    staying up to date with the latest technologies to create
+                    impactful and innovative solutions.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-4 mb-6">
+                  <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
+                    <a
+                      href="/resume/Frontend_Developer_amit_kukreja.pdf"
+                      download
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center"
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      Resume
+                    </a>
+                  </Button>
                   <a
                     href="mailto:amitkukrejadev@gmail.com"
-                    className="hover:underline"
-                  >
-                    amitkukrejadev@gmail.com
-                  </a>
-                </div>
-                <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                  <MapPin className="w-4 h-4" />
-                  <span>Mumbai, India</span>
-                </div>
-                <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                  <Globe className="w-4 h-4" />
-                  <a
-                    href="https://amitkukrejadev.vercel.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline"
-                  >
-                    amitkukrejadev.vercel.app
-                  </a>
-                </div>
-                <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                  <Linkedin className="w-4 h-4" />
-                  <a
-                    href="https://linkedin.com/in/amitkukrejadev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline"
-                  >
-                    linkedin.com/in/amitkukrejadev
-                  </a>
-                </div>
-                <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                  <Github className="w-4 h-4" />
-                  <a
-                    href="https://github.com/amitkukrejadev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline"
-                  >
-                    github.com/amitkukrejadev
-                  </a>
-                </div>
-                <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                  <Users className="w-4 h-4" />
-                  <a
-                    href="https://peerlist.io/iamamitkukreja"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline"
-                  >
-                    peerlist.io/iamamitkukreja
-                  </a>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Full Stack Developer with hands-on experience building modern
-                  web applications using React/Next.js for frontends and
-                  Node.js/MongoDB for backends. Recently completed my MCA from
-                  Jain University and have contributed to real-world SaaS
-                  projects such as FrameGenie, DevFlow (a Q&A platform), and an
-                  event-driven SaaS system.
-                </p>
-
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  I’m passionate about writing clean, maintainable code,
-                  designing scalable architectures, and delivering pixel-perfect
-                  UIs. I believe in continuous learning and staying up to date
-                  with the latest technologies to create impactful and
-                  innovative solutions.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-4">
-                <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
-                  <a
-                    href="/resume/Frontend_Developer_amit_kukreja.pdf"
-                    download
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center"
                   >
-                    <Download className="w-4 h-4 mr-2" />
-                    Resume
+                    <Mail className="w-8 h-8 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 stroke-2" />
                   </a>
-                </Button>
-                <Link href="/about">
-                  <Button
-                    variant="outline"
-                    className="border-gray-300 dark:border-gray-600"
+                  {/* <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
                   >
-                    About Me
-                  </Button>
-                </Link>
+                    <MapPin className="w-8 h-8 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 stroke-2" />
+                  </a>
+                  <a
+                    href="https://amitkukrejadev.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
+                    <Globe className="w-8 h-8 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 stroke-2" />
+                  </a> */}
+                  <a
+                    href="https://linkedin.com/in/amitkukrejadev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
+                    <FaLinkedin className="w-8 h-8 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400" />
+                  </a>
+                  <a
+                    href="https://github.com/amitkukrejadev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
+                    <FaGithub className="w-8 h-8 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100" />
+                  </a>
+                  <a
+                    href="https://peerlist.io/amitkukreja"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
+                    <Users className="w-8 h-8 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 stroke-2" />
+                  </a>
+                </div>
               </div>
             </div>
 
             <div className="relative">
-              {/* Profile photo */}
-              <div className="aspect-square rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
-                <img
-                  src="/images/profile.jpg"
-                  alt="Amit Kukreja - Full Stack Developer"
-                  className="w-full h-full object-cover"
+              <div className="grid grid-cols-3 gap-6">
+                <SkillItem
+                  refProp={reactIconRef}
+                  icon={
+                    <SiReact className="text-blue-500 dark:text-blue-300 text-4xl" />
+                  }
+                  label="React.js"
                 />
-              </div>
-
-              {/* Animated tech icons below the image */}
-              <div className="mt-8 grid grid-cols-3 gap-6">
-                <div
-                  ref={reactIconRef}
-                  className="flex flex-col items-center group cursor-pointer"
-                >
-                  <div className="w-20 h-20 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl border border-blue-200 dark:border-blue-800">
-                    <SiReact className="text-blue-500 dark:text-blue-300 text-3xl" />
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
-                    React.js
-                  </span>
-                </div>
-
-                <div
-                  ref={nextIconRef}
-                  className="flex flex-col items-center group cursor-pointer"
-                >
-                  <div className="w-20 h-20 bg-black dark:bg-gray-800 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl border border-gray-300 dark:border-gray-600">
-                    <SiNextdotjs className="text-white text-3xl" />
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
-                    Next.js
-                  </span>
-                </div>
-
-                <div
-                  ref={nodeIconRef}
-                  className="flex flex-col items-center group cursor-pointer"
-                >
-                  <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl border border-green-200 dark:border-green-800">
-                    <FaNodeJs className="text-green-600 dark:text-green-400 text-3xl" />
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
-                    Node.js
-                  </span>
-                </div>
-
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="w-20 h-20 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl border border-yellow-200 dark:border-yellow-800">
-                    <SiJavascript className="text-yellow-500 dark:text-yellow-400 text-3xl" />
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
-                    JavaScript
-                  </span>
-                </div>
-
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl border border-green-200 dark:border-green-800">
-                    <SiMongodb className="text-green-700 dark:text-green-400 text-3xl" />
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
-                    MongoDB
-                  </span>
-                </div>
-
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="w-20 h-20 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-xl border border-cyan-200 dark:border-cyan-800">
-                    <SiTailwindcss className="text-cyan-500 dark:text-cyan-300 text-3xl" />
-                  </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium">
-                    Tailwind
-                  </span>
-                </div>
+                <SkillItem
+                  refProp={nextIconRef}
+                  icon={
+                    <SiNextdotjs className="text-black dark:text-white text-4xl" />
+                  }
+                  label="Next.js"
+                />
+                <SkillItem
+                  refProp={nodeIconRef}
+                  icon={
+                    <FaNodeJs className="text-green-600 dark:text-green-400 text-4xl" />
+                  }
+                  label="Node.js"
+                />
+                <SkillItem
+                  icon={
+                    <SiJavascript className="text-yellow-500 dark:text-yellow-400 text-4xl" />
+                  }
+                  label="JavaScript"
+                />
+                <SkillItem
+                  icon={
+                    <SiMongodb className="text-green-700 dark:text-green-400 text-4xl" />
+                  }
+                  label="MongoDB"
+                />
+                <SkillItem
+                  icon={
+                    <SiTailwindcss className="text-cyan-500 dark:text-cyan-300 text-4xl" />
+                  }
+                  label="Tailwind"
+                />
+                <SkillItem
+                  icon={<FaHtml5 className="text-orange-600 text-4xl" />}
+                  label="HTML"
+                />
+                <SkillItem
+                  icon={<FaCss3Alt className="text-blue-600 text-4xl" />}
+                  label="CSS"
+                />
+                <SkillItem
+                  icon={<FaBootstrap className="text-purple-600 text-4xl" />}
+                  label="Bootstrap"
+                />
               </div>
             </div>
           </div>
@@ -322,9 +314,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12">
             Experience
           </h2>
-
           <div className="space-y-8">
-            {/* Freelance Full Stack Developer */}
             <Card className="dark:border-gray-800 dark:bg-gray-950">
               <CardHeader>
                 <div className="flex justify-between items-start">
@@ -345,7 +335,7 @@ export default function Home() {
                 <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 mb-4">
                   <li>
                     Built and deployed full-stack projects inspired by
-                    real-world use cases (e.g. AI video apps, CMS dashboards,
+                    real-world use cases (e.g., AI video apps, CMS dashboards,
                     e-commerce features).
                   </li>
                   <li>
@@ -433,8 +423,6 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Account Receivable Executive */}
             <Card className="dark:border-gray-800 dark:bg-gray-950">
               <CardHeader>
                 <div className="flex justify-between items-start">
@@ -479,9 +467,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12">
             Education
           </h2>
-
           <div className="space-y-8">
-            {/* Jain University */}
             <Card className="dark:border-gray-800 dark:bg-gray-950">
               <CardHeader>
                 <div className="flex items-start gap-4">
@@ -508,8 +494,6 @@ export default function Home() {
                 </div>
               </CardHeader>
             </Card>
-
-            {/* St. Paul College */}
             <Card className="dark:border-gray-800 dark:bg-gray-950">
               <CardHeader>
                 <div className="flex items-start gap-4">
@@ -551,116 +535,142 @@ export default function Home() {
             Technologies and tools I've worked with throughout my projects and
             experience
           </p>
-
           <div className="space-y-12">
-            {/* Front End */}
             <div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                 Front End
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-6">
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <SiJavascript className={`${iconClasses} text-yellow-400`} />
-                  <span className="text-sm">JavaScript</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <FaReact className={`${iconClasses} text-sky-500`} />
-                  <span className="text-sm">React.js</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <SiNextdotjs
-                    className={`${iconClasses} text-black dark:text-white`}
-                  />
-                  <span className="text-sm">Next.js</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <FaHtml5 className={`${iconClasses} text-orange-600`} />
-                  <span className="text-sm">HTML</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <FaCss3Alt className={`${iconClasses} text-blue-600`} />
-                  <span className="text-sm">CSS</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <FaBootstrap className={`${iconClasses} text-purple-600`} />
-                  <span className="text-sm">Bootstrap</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <SiTailwindcss className={`${iconClasses} text-cyan-500`} />
-                  <span className="text-sm">Tailwind CSS</span>
-                </div>
+                <SkillItem
+                  icon={
+                    <SiJavascript
+                      className={`${iconClasses} text-yellow-400`}
+                    />
+                  }
+                  label="JavaScript"
+                />
+                <SkillItem
+                  icon={<FaReact className={`${iconClasses} text-sky-500`} />}
+                  label="React.js"
+                />
+                <SkillItem
+                  icon={
+                    <SiNextdotjs
+                      className={`${iconClasses} text-black dark:text-white`}
+                    />
+                  }
+                  label="Next.js"
+                />
+                <SkillItem
+                  icon={
+                    <FaHtml5 className={`${iconClasses} text-orange-600`} />
+                  }
+                  label="HTML"
+                />
+                <SkillItem
+                  icon={
+                    <FaCss3Alt className={`${iconClasses} text-blue-600`} />
+                  }
+                  label="CSS"
+                />
+                <SkillItem
+                  icon={
+                    <FaBootstrap className={`${iconClasses} text-purple-600`} />
+                  }
+                  label="Bootstrap"
+                />
+                <SkillItem
+                  icon={
+                    <SiTailwindcss className={`${iconClasses} text-cyan-500`} />
+                  }
+                  label="Tailwind CSS"
+                />
               </div>
             </div>
-
-            {/* Backend & Databases */}
             <div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                 Backend & Databases
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6">
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <FaNodeJs className={`${iconClasses} text-green-600`} />
-                  <span className="text-sm">Node.js</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <SiExpress className={`${iconClasses} text-gray-500`} />
-                  <span className="text-sm">Express.js</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <SiFastify
-                    className={`${iconClasses} text-black dark:text-white`}
-                  />
-                  <span className="text-sm">React IMDb Clone</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <SiMongodb className={`${iconClasses} text-green-500`} />
-                  <span className="text-sm">MongoDB</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <SiPostgresql className={`${iconClasses} text-blue-500`} />
-                  <span className="text-sm">PostgreSQL</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <SiPrisma className={`${iconClasses} text-indigo-500`} />
-                  <span className="text-sm">Prisma</span>
-                </div>
+                <SkillItem
+                  icon={
+                    <FaNodeJs className={`${iconClasses} text-green-600`} />
+                  }
+                  label="Node.js"
+                />
+                <SkillItem
+                  icon={
+                    <SiExpress className={`${iconClasses} text-gray-500`} />
+                  }
+                  label="Express.js"
+                />
+                <SkillItem
+                  icon={
+                    <SiFastify
+                      className={`${iconClasses} text-black dark:text-white`}
+                    />
+                  }
+                  label="Fastify"
+                />
+                <SkillItem
+                  icon={
+                    <SiMongodb className={`${iconClasses} text-green-500`} />
+                  }
+                  label="MongoDB"
+                />
+                <SkillItem
+                  icon={
+                    <SiPostgresql className={`${iconClasses} text-blue-500`} />
+                  }
+                  label="PostgreSQL"
+                />
+                <SkillItem
+                  icon={
+                    <SiPrisma className={`${iconClasses} text-indigo-500`} />
+                  }
+                  label="Prisma"
+                />
               </div>
             </div>
-
-            {/* Tools & Platforms */}
             <div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                 Tools & Platforms
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6">
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <FaGitAlt className={`${iconClasses} text-orange-500`} />
-                  <span className="text-sm">Git</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <FaGithub
-                    className={`${iconClasses} text-black dark:text-white`}
-                  />
-                  <span className="text-sm">GitHub</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <VscCode className={`${iconClasses} text-blue-500`} />
-                  <span className="text-sm">VS Code</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <FaFigma className={`${iconClasses} text-pink-500`} />
-                  <span className="text-sm">Figma</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <SiVercel
-                    className={`${iconClasses} text-black dark:text-white`}
-                  />
-                  <span className="text-sm">Vercel</span>
-                </div>
-                <div className="flex flex-col items-center text-gray-700 dark:text-gray-300">
-                  <FaDocker className={`${iconClasses} text-blue-400`} />
-                  <span className="text-sm">Docker</span>
-                </div>
+                <SkillItem
+                  icon={
+                    <FaGitAlt className={`${iconClasses} text-orange-500`} />
+                  }
+                  label="Git"
+                />
+                <SkillItem
+                  icon={
+                    <FaGithub
+                      className={`${iconClasses} text-black dark:text-white`}
+                    />
+                  }
+                  label="GitHub"
+                />
+                <SkillItem
+                  icon={<VscCode className={`${iconClasses} text-blue-500`} />}
+                  label="VS Code"
+                />
+                <SkillItem
+                  icon={<FaFigma className={`${iconClasses} text-pink-500`} />}
+                  label="Figma"
+                />
+                <SkillItem
+                  icon={
+                    <SiVercel
+                      className={`${iconClasses} text-black dark:text-white`}
+                    />
+                  }
+                  label="Vercel"
+                />
+                <SkillItem
+                  icon={<FaDocker className={`${iconClasses} text-blue-400`} />}
+                  label="Docker"
+                />
               </div>
             </div>
           </div>
@@ -673,238 +683,313 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12">
             Projects
           </h2>
-
-          <div className="space-y-12">
-            {/* VidSnap.AI Project */}
+          <div className="space-y-16">
+            {/* FrameGenie (Image on Left) */}
             <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg p-8 aspect-video flex items-center justify-center">
-                <div className="text-center">
-                  <img
-                    src="/images/FrameGenie.jpeg"
-                    alt="FrameGenie"
-                    className="max-w-[90%] max-h-[90%] object-contain rounded-lg"
-                  />
-                </div>
-              </div>
+              <div
+                className="rounded-lg p-8 aspect-video flex items-center justify-center bg-cover bg-center"
+                style={{ backgroundImage: `url('/images/FrameGenie.jpeg')` }}
+              ></div>
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   FrameGenie
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  AI-powered video processing platform with automated format
-                  conversions for social media platforms. Features intelligent
-                  preview generation and seamless media management.
+                  FrameGenie is a cutting-edge, full-stack SaaS platform that
+                  empowers users to create AI-powered movie posters using simple
+                  prompts. This project offers a seamless experience for
+                  generating, saving, and managing stunning visual content with
+                  advanced features.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Next.js
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Node.js
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Clerk
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Cloudinary
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    MongoDB
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Prisma
-                  </Badge>
+                  <Badge variant="outline">Next.js 14</Badge>
+                  <Badge variant="outline">React</Badge>
+                  <Badge variant="outline">Tailwind CSS</Badge>
+                  <Badge variant="outline">Clerk</Badge>
+                  <Badge variant="outline">Prisma</Badge>
+                  <Badge variant="outline">PostgreSQL</Badge>
+                  <Badge variant="outline">Cloudinary</Badge>
                 </div>
-                <div className="space-y-2 mb-4">
+                <div className="space-y-2 mb-6">
                   <h4 className="font-semibold dark:text-white">
                     Key Features:
                   </h4>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                    <li>AI-powered preview generation</li>
                     <li>
-                      Automated format conversions (Instagram, Twitter,
-                      Facebook)
+                      Generate stunning movie posters with AI-powered prompts
                     </li>
-                    <li>Serverless video processing workflows</li>
-                    <li>Secure authentication with Clerk</li>
+                    <li>
+                      Secure authentication and user management with Clerk
+                    </li>
+                    <li>
+                      Save, view, and delete generated posters effortlessly
+                    </li>
+                    <li>
+                      Upload custom poster images via Cloudinary integration
+                    </li>
+                    <li>
+                      Responsive and beautiful UI designed with Tailwind CSS
+                    </li>
+                    <li>Ready for OpenAI integration in the backend logic</li>
                   </ul>
                 </div>
-                <a
-                  href="https://github.com/amitkukrejadev/framegenie"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 dark:hover:text-black">
-                    View on GitHub
+                <div className="space-y-2 mb-6">
+                  <h4 className="font-semibold dark:text-white">
+                    Technical Challenges:
+                  </h4>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    One of the main challenges was optimizing the AI-powered
+                    poster generation to handle diverse prompts efficiently
+                    while ensuring fast load times. This was addressed by
+                    leveraging Next.js Server Actions and Edge Functions,
+                    combined with Cloudinary for scalable image storage and
+                    processing.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    <a
+                      href="https://framegenie.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Live Demo
+                    </a>
                   </Button>
-                </a>
+                  <Button variant="outline">
+                    <FaGithub className="w-4 h-4 mr-2" />
+                    <a
+                      href="https://github.com/amitkukrejadev/framegenie"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Code
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
 
-            {/* React IMDb Clone Module */}
+            {/* Event-Driven Web App (Text on Right) */}
             <div className="grid lg:grid-cols-2 gap-8 items-center">
-              {/* Left Side: Project Details */}
               <div className="order-2 lg:order-1">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  React IMDb Clone
+                  Event-Driven Web App
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  A hands-on IMDb clone using real TMDb APIs, routing, and
-                  dynamic UI components built in React. Ideal for learning
-                  practical frontend skills like state management, routing,
-                  search functionality, and API integration.
+                  A modern event-driven SaaS starter designed for scalable
+                  integrations, featuring authentication, webhook handlers, and
+                  background workflows.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    React.js
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    TMDb API
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    React Router
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    JavaScript
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    CSS
-                  </Badge>
+                  <Badge variant="outline">Next.js</Badge>
+                  <Badge variant="outline">Clerk</Badge>
+                  <Badge variant="outline">Prisma</Badge>
+                  <Badge variant="outline">NeonDB</Badge>
+                  <Badge variant="outline">PostgreSQL</Badge>
                 </div>
-                <div className="space-y-2 mb-4">
+                <div className="space-y-2 mb-6">
                   <h4 className="font-semibold dark:text-white">
                     Key Features:
                   </h4>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                    <li>Real API integration using TMDb</li>
-                    <li>Dynamic routing for movie details</li>
-                    <li>Search functionality and favorites</li>
-                    <li>Movie cards with posters, ratings, and info</li>
+                    <li>Secure authentication with Clerk</li>
+                    <li>Webhook handlers for real-time integrations</li>
+                    <li>Background workflows for asynchronous processing</li>
+                    <li>
+                      Scalable database architecture with Prisma and NeonDB
+                    </li>
                   </ul>
                 </div>
-                <a
-                  href="https://github.com/amitkukrejadev/React-IMDb"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <div className="space-y-2 mb-6">
+                  <h4 className="font-semibold dark:text-white">
+                    Technical Challenges:
+                  </h4>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Ensuring reliable webhook handling and background job
+                    processing while maintaining scalability. Solved by
+                    implementing a robust event-driven architecture with Next.js
+                    patterns and NeonDB for efficient database operations.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-4">
                   <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
-                    View Source Code
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    <a
+                      href="https://event-driven-app.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Live Demo
+                    </a>
                   </Button>
-                </a>
+                  <Button variant="outline">
+                    <FaGithub className="w-4 h-4 mr-2" />
+                    <a
+                      href="https://github.com/amitkukrejadev/event-driven-app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Code
+                    </a>
+                  </Button>
+                </div>
               </div>
-
-              {/* Right Side: Project Image */}
-              <div className="order-1 lg:order-2 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg p-4 flex items-center justify-center">
-                <div className="w-[90%] h-[90%] rounded-lg overflow-hidden shadow-md border dark:border-gray-700">
-                  <img
-                    src="/projects/imdb-clone-preview.png" // 👈 Replace this with your actual image path
-                    alt="IMDb Clone Project Preview"
-                    className="w-full h-full object-cover"
-                  />
+              <div className="order-1 lg:order-2 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg p-8 aspect-video flex items-center justify-center">
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Event-Driven App
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    SaaS Starter Platform
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* E-commerce Dashboard */}
+            {/* Q&A Full-Stack Platform (Text on Left) */}
             <div className="grid lg:grid-cols-2 gap-8 items-center">
-              {/* Left: Image block */}
-              <div className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-lg p-4 aspect-video flex items-center justify-center">
-                <img
-                  src="/projects/url-shortener.png" // 👈 Replace with actual image path
-                  alt="URL Shortener App"
-                  className="rounded-lg object-contain w-[90%] h-[90%]"
-                />
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-lg p-8 aspect-video flex items-center justify-center">
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Q&A Platform
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Knowledge-Sharing Platform
+                  </p>
+                </div>
               </div>
-
-              {/* Right: Content block */}
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  URL Shortener
+                  Q&A Full-Stack Platform
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  A compact and minimalistic URL shortener built with React.
-                  Offers optional backend integration, clean UX, and clipboard
-                  support for quick sharing.
+                  A knowledge-sharing platform with secure authentication,
+                  question/answer posting, voting, tagging, and search
+                  functionality.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    React.js
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Tailwind CSS
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    JavaScript
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="dark:border-gray-600 dark:text-gray-300"
-                  >
-                    Firebase (Optional)
-                  </Badge>
+                  <Badge variant="outline">Next.js</Badge>
+                  <Badge variant="outline">Appwrite</Badge>
+                  <Badge variant="outline">Tailwind CSS</Badge>
+                  <Badge variant="outline">React</Badge>
                 </div>
-                <div className="space-y-2 mb-4">
+                <div className="space-y-2 mb-6">
                   <h4 className="font-semibold dark:text-white">
                     Key Features:
                   </h4>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                    <li>Generates short URLs instantly</li>
-                    <li>Clipboard copy functionality</li>
-                    <li>Minimalist UI/UX with responsive design</li>
-                    <li>Optional backend support (e.g. Firebase)</li>
+                    <li>Secure authentication with Appwrite</li>
+                    <li>Question/answer posting and voting system</li>
+                    <li>Tagging and search functionality</li>
+                    <li>Client-side state management for responsive UI</li>
                   </ul>
                 </div>
-                <a
-                  href="https://github.com/amitkukrejadev/url-shortener"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <div className="space-y-2 mb-6">
+                  <h4 className="font-semibold dark:text-white">
+                    Technical Challenges:
+                  </h4>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Building an efficient search and tagging system while
+                    maintaining performance. Addressed by optimizing Appwrite
+                    queries and implementing client-side caching with React
+                    state management.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-4">
                   <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
-                    View Code
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                      Live Demo
+                    </a>
                   </Button>
-                </a>
+                  <Button variant="outline">
+                    <FaGithub className="w-4 h-4 mr-2" />
+                    <a
+                      href="https://github.com/amitkukrejadev/qna-platform"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Code
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Secure LMS (Text on Right) */}
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div className="order-2 lg:order-1">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                  Secure LMS
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  A course management platform with role-based access, media
+                  uploads, Razorpay payment integration, and production-grade
+                  error handling.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="outline">Next.js</Badge>
+                  <Badge variant="outline">Tailwind CSS</Badge>
+                  <Badge variant="outline">Razorpay</Badge>
+                  <Badge variant="outline">Prisma</Badge>
+                  <Badge variant="outline">PostgreSQL</Badge>
+                </div>
+                <div className="space-y-2 mb-6">
+                  <h4 className="font-semibold dark:text-white">
+                    Key Features:
+                  </h4>
+                  <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+                    <li>Role-based access for students and instructors</li>
+                    <li>Media uploads for course content</li>
+                    <li>Razorpay payment integration for course purchases</li>
+                    <li>Centralized validations and error handling</li>
+                  </ul>
+                </div>
+                <div className="space-y-2 mb-6">
+                  <h4 className="font-semibold dark:text-white">
+                    Technical Challenges:
+                  </h4>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Implementing secure role-based access and handling large
+                    media uploads efficiently. Solved by using Prisma for robust
+                    database management and optimizing upload pipelines with
+                    chunked processing.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    <a
+                      href="https://secure-lms.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Live Demo
+                    </a>
+                  </Button>
+                  <Button variant="outline">
+                    <FaGithub className="w-4 h-4 mr-2" />
+                    <a
+                      href="https://github.com/amitkukrejadev/secure-lms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Code
+                    </a>
+                  </Button>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-lg p-8 aspect-video flex items-center justify-center">
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Secure LMS
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Course Management Platform
+                  </p>
+                </div>
               </div>
             </div>
           </div>
