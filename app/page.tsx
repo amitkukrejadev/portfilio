@@ -30,6 +30,7 @@ import {
   Users,
   Download,
   ExternalLink,
+  MapPin,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -162,6 +163,18 @@ export default function Home() {
                 </p>
               </div>
 
+              <div className="flex items-center gap-4 mb-6 card-to-observe">
+                <a
+                  href="mailto:amitkukrejadev@gmail.com"
+                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100"
+                >
+                  <Mail className="w-5 h-5 mr-2" /> amitkukrejadev@gmail.com
+                </a>
+                <span className="flex items-center text-gray-600 dark:text-gray-300">
+                  <MapPin className="w-5 h-5 mr-2" /> Mumbai, India
+                </span>
+              </div>
+
               <div className="space-y-4">
                 <div className="space-y-4">
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -169,8 +182,8 @@ export default function Home() {
                     modern web applications using React/Next.js for frontends
                     and Node.js/MongoDB for backends. Recently completed my MCA
                     from Jain University and have contributed to real-world SaaS
-                    projects such as FrameGenie, DevFlow (a Q&A platform), and
-                    an event-driven SaaS system.
+                    projects such as FrameGenie, Q&A platform, Secure LMS Platform and
+                    an event-driven SaaS Application.
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                     I’m passionate about writing clean, maintainable code,
