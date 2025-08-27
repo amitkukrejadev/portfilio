@@ -25,13 +25,7 @@ import {
   SiFastify,
   SiReact,
 } from "react-icons/si";
-import {
-  Mail,
-  Users,
-  Download,
-  ExternalLink,
-  MapPin,
-} from "lucide-react";
+import { Mail, Users, Download, ExternalLink, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -182,8 +176,8 @@ export default function Home() {
                     modern web applications using React/Next.js for frontends
                     and Node.js/MongoDB for backends. Recently completed my MCA
                     from Jain University and have contributed to real-world SaaS
-                    projects such as FrameGenie, Q&A platform, Secure LMS Platform and
-                    an event-driven SaaS Application.
+                    projects such as FrameGenie, Q&A platform, Secure LMS
+                    Platform and an event-driven SaaS Application.
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                     I’m passionate about writing clean, maintainable code,

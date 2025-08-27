@@ -20,7 +20,7 @@ import {
 } from "react-icons/si";
 
 export default function SkillsPage() {
-  return (
+return (
     <div className="bg-white dark:bg-gray-950">
       <div>
         <section className="py-20 px-4 sm:px-6 lg:px-8">
