@@ -12,7 +12,7 @@ export default function Footer() {
               Amit Kukreja<span className="text-blue-500">.</span>
             </Link>
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-              Full Stack Developer — React, Next.js, Node.js.
+              Software Engineer | Frontend Developer (React, Next.js, Tailwind)
             </p>
           </div>
 

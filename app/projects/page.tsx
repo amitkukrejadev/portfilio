@@ -12,7 +12,8 @@ export default function ProjectsPage() {
             Projects
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl">
-            A collection of projects I've worked on, including professional work, personal projects, and academic explorations.
+            A collection of projects I've worked on, including professional
+            work, personal projects, and academic explorations.
           </p>
 
           <div className="space-y-16">
@@ -27,7 +28,11 @@ export default function ProjectsPage() {
                   FrameGenie
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  FrameGenie is a cutting-edge, full-stack SaaS platform that empowers users to create AI-powered movie posters using simple prompts. This project offers a seamless experience for generating, saving, and managing stunning visual content with advanced features.
+                  FrameGenie is a cutting-edge, full-stack SaaS platform that
+                  empowers users to create AI-powered movie posters using simple
+                  prompts. This project offers a seamless experience for
+                  generating, saving, and managing stunning visual content with
+                  advanced features.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge variant="outline">Next.js 14</Badge>
@@ -39,32 +44,59 @@ export default function ProjectsPage() {
                   <Badge variant="outline">Cloudinary</Badge>
                 </div>
                 <div className="space-y-2 mb-6">
-                  <h4 className="font-semibold dark:text-white">Key Features:</h4>
+                  <h4 className="font-semibold dark:text-white">
+                    Key Features:
+                  </h4>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                    <li>Generate stunning movie posters with AI-powered prompts</li>
-                    <li>Secure authentication and user management with Clerk</li>
-                    <li>Save, view, and delete generated posters effortlessly</li>
-                    <li>Upload custom poster images via Cloudinary integration</li>
-                    <li>Responsive and beautiful UI designed with Tailwind CSS</li>
+                    <li>
+                      Generate stunning movie posters with AI-powered prompts
+                    </li>
+                    <li>
+                      Secure authentication and user management with Clerk
+                    </li>
+                    <li>
+                      Save, view, and delete generated posters effortlessly
+                    </li>
+                    <li>
+                      Upload custom poster images via Cloudinary integration
+                    </li>
+                    <li>
+                      Responsive and beautiful UI designed with Tailwind CSS
+                    </li>
                     <li>Ready for OpenAI integration in the backend logic</li>
                   </ul>
                 </div>
                 <div className="space-y-2 mb-6">
-                  <h4 className="font-semibold dark:text-white">Technical Challenges:</h4>
+                  <h4 className="font-semibold dark:text-white">
+                    Technical Challenges:
+                  </h4>
                   <p className="text-gray-700 dark:text-gray-300">
-                    One of the main challenges was optimizing the AI-powered poster generation to handle diverse prompts efficiently while ensuring fast load times. This was addressed by leveraging Next.js Server Actions and Edge Functions, combined with Cloudinary for scalable image storage and processing.
+                    One of the main challenges was optimizing the AI-powered
+                    poster generation to handle diverse prompts efficiently
+                    while ensuring fast load times. This was addressed by
+                    leveraging Next.js Server Actions and Edge Functions,
+                    combined with Cloudinary for scalable image storage and
+                    processing.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    <a href="https://framegenie.vercel.app" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://framegenie.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Live Demo
                     </a>
                   </Button>
                   <Button variant="outline">
                     <Github className="w-4 h-4 mr-2" />
-                    <a href="https://github.com/amitkukrejadev/framegenie" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://github.com/amitkukrejadev/framegenie"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       View Code
                     </a>
                   </Button>
@@ -79,7 +111,9 @@ export default function ProjectsPage() {
                   Event-Driven Web App
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  A modern event-driven SaaS starter designed for scalable integrations, featuring authentication, webhook handlers, and background workflows.
+                  A modern event-driven SaaS starter designed for scalable
+                  integrations, featuring authentication, webhook handlers, and
+                  background workflows.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge variant="outline">Next.js</Badge>
@@ -89,30 +123,47 @@ export default function ProjectsPage() {
                   <Badge variant="outline">PostgreSQL</Badge>
                 </div>
                 <div className="space-y-2 mb-6">
-                  <h4 className="font-semibold dark:text-white">Key Features:</h4>
+                  <h4 className="font-semibold dark:text-white">
+                    Key Features:
+                  </h4>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
                     <li>Secure authentication with Clerk</li>
                     <li>Webhook handlers for real-time integrations</li>
                     <li>Background workflows for asynchronous processing</li>
-                    <li>Scalable database architecture with Prisma and NeonDB</li>
+                    <li>
+                      Scalable database architecture with Prisma and NeonDB
+                    </li>
                   </ul>
                 </div>
                 <div className="space-y-2 mb-6">
-                  <h4 className="font-semibold dark:text-white">Technical Challenges:</h4>
+                  <h4 className="font-semibold dark:text-white">
+                    Technical Challenges:
+                  </h4>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Ensuring reliable webhook handling and background job processing while maintaining scalability. Solved by implementing a robust event-driven architecture with Next.js patterns and NeonDB for efficient database operations.
+                    Ensuring reliable webhook handling and background job
+                    processing while maintaining scalability. Solved by
+                    implementing a robust event-driven architecture with Next.js
+                    patterns and NeonDB for efficient database operations.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    <a href="https://event-driven-app.vercel.app" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://event-driven-app.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Live Demo
                     </a>
                   </Button>
                   <Button variant="outline">
                     <Github className="w-4 h-4 mr-2" />
-                    <a href="https://github.com/amitkukrejadev/event-driven-app" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://github.com/amitkukrejadev/event-driven-app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       View Code
                     </a>
                   </Button>
@@ -147,7 +198,9 @@ export default function ProjectsPage() {
                   Q&A Full-Stack Platform
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  A knowledge-sharing platform with secure authentication, question/answer posting, voting, tagging, and search functionality.
+                  A knowledge-sharing platform with secure authentication,
+                  question/answer posting, voting, tagging, and search
+                  functionality.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge variant="outline">Next.js</Badge>
@@ -156,7 +209,9 @@ export default function ProjectsPage() {
                   <Badge variant="outline">React</Badge>
                 </div>
                 <div className="space-y-2 mb-6">
-                  <h4 className="font-semibold dark:text-white">Key Features:</h4>
+                  <h4 className="font-semibold dark:text-white">
+                    Key Features:
+                  </h4>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
                     <li>Secure authentication with Appwrite</li>
                     <li>Question/answer posting and voting system</li>
@@ -165,21 +220,34 @@ export default function ProjectsPage() {
                   </ul>
                 </div>
                 <div className="space-y-2 mb-6">
-                  <h4 className="font-semibold dark:text-white">Technical Challenges:</h4>
+                  <h4 className="font-semibold dark:text-white">
+                    Technical Challenges:
+                  </h4>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Building an efficient search and tagging system while maintaining performance. Addressed by optimizing Appwrite queries and implementing client-side caching with React state management.
+                    Building an efficient search and tagging system while
+                    maintaining performance. Addressed by optimizing Appwrite
+                    queries and implementing client-side caching with React
+                    state management.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    <a href="https://qa-platform.vercel.app" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://qna-platform.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Live Demo
                     </a>
                   </Button>
                   <Button variant="outline">
                     <Github className="w-4 h-4 mr-2" />
-                    <a href="https://github.com/amitkukrejadev/qa-platform" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://github.com/amitkukrejadev/qna-platform"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       View Code
                     </a>
                   </Button>
@@ -194,7 +262,9 @@ export default function ProjectsPage() {
                   Secure LMS
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  A course management platform with role-based access, media uploads, Razorpay payment integration, and production-grade error handling.
+                  A course management platform with role-based access, media
+                  uploads, Razorpay payment integration, and production-grade
+                  error handling.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge variant="outline">Next.js</Badge>
@@ -204,7 +274,9 @@ export default function ProjectsPage() {
                   <Badge variant="outline">PostgreSQL</Badge>
                 </div>
                 <div className="space-y-2 mb-6">
-                  <h4 className="font-semibold dark:text-white">Key Features:</h4>
+                  <h4 className="font-semibold dark:text-white">
+                    Key Features:
+                  </h4>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
                     <li>Role-based access for students and instructors</li>
                     <li>Media uploads for course content</li>
@@ -213,21 +285,34 @@ export default function ProjectsPage() {
                   </ul>
                 </div>
                 <div className="space-y-2 mb-6">
-                  <h4 className="font-semibold dark:text-white">Technical Challenges:</h4>
+                  <h4 className="font-semibold dark:text-white">
+                    Technical Challenges:
+                  </h4>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Implementing secure role-based access and handling large media uploads efficiently. Solved by using Prisma for robust database management and optimizing upload pipelines with chunked processing.
+                    Implementing secure role-based access and handling large
+                    media uploads efficiently. Solved by using Prisma for robust
+                    database management and optimizing upload pipelines with
+                    chunked processing.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    <a href="https://secure-lms.vercel.app" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://secure-lms.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Live Demo
                     </a>
                   </Button>
                   <Button variant="outline">
                     <Github className="w-4 h-4 mr-2" />
-                    <a href="https://github.com/amitkukrejadev/secure-lms" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://github.com/amitkukrejadev/secure-lms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       View Code
                     </a>
                   </Button>
@@ -257,7 +342,8 @@ export default function ProjectsPage() {
                       Expense Tracker
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      A simple application to track expenses using JavaScript and localStorage for data persistence.
+                      A simple application to track expenses using JavaScript
+                      and localStorage for data persistence.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       <Badge variant="outline">JavaScript</Badge>
@@ -265,15 +351,26 @@ export default function ProjectsPage() {
                       <Badge variant="outline">localStorage</Badge>
                     </div>
                     <div className="flex flex-wrap gap-4">
-                      <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200" size="sm">
+                      <Button
+                        className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+                        size="sm"
+                      >
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        <a href="https://expense-tracker.vercel.app" target="_blank" rel="noopener noreferrer">
+                        <a
+                          href="https://expense-tracker.vercel.app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           Live Demo
                         </a>
                       </Button>
                       <Button variant="outline" size="sm">
                         <Github className="w-4 h-4 mr-2" />
-                        <a href="https://github.com/amitkukrejadev/expense-tracker" target="_blank" rel="noopener noreferrer">
+                        <a
+                          href="https://github.com/amitkukrejadev/expense-tracker"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           View Code
                         </a>
                       </Button>
@@ -287,7 +384,8 @@ export default function ProjectsPage() {
                       To-Do App
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      A task management application built with JavaScript, using localStorage for storing tasks.
+                      A task management application built with JavaScript, using
+                      localStorage for storing tasks.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       <Badge variant="outline">JavaScript</Badge>
@@ -295,15 +393,26 @@ export default function ProjectsPage() {
                       <Badge variant="outline">localStorage</Badge>
                     </div>
                     <div className="flex flex-wrap gap-4">
-                      <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200" size="sm">
+                      <Button
+                        className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+                        size="sm"
+                      >
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        <a href="https://todo-app.vercel.app" target="_blank" rel="noopener noreferrer">
+                        <a
+                          href="https://todo-app.vercel.app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           Live Demo
                         </a>
                       </Button>
                       <Button variant="outline" size="sm">
                         <Github className="w-4 h-4 mr-2" />
-                        <a href="https://github.com/amitkukrejadev/todo-app" target="_blank" rel="noopener noreferrer">
+                        <a
+                          href="https://github.com/amitkukrejadev/todo-app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           View Code
                         </a>
                       </Button>
@@ -317,22 +426,34 @@ export default function ProjectsPage() {
                       Quiz App
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      An interactive quiz application built with JavaScript for dynamic question rendering and scoring.
+                      An interactive quiz application built with JavaScript for
+                      dynamic question rendering and scoring.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       <Badge variant="outline">JavaScript</Badge>
                       <Badge variant="outline">HTML/CSS</Badge>
                     </div>
                     <div className="flex flex-wrap gap-4">
-                      <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200" size="sm">
+                      <Button
+                        className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+                        size="sm"
+                      >
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        <a href="https://quiz-app.vercel.app" target="_blank" rel="noopener noreferrer">
+                        <a
+                          href="https://quiz-app.vercel.app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           Live Demo
                         </a>
                       </Button>
                       <Button variant="outline" size="sm">
                         <Github className="w-4 h-4 mr-2" />
-                        <a href="https://github.com/amitkukrejadev/quiz-app" target="_blank" rel="noopener noreferrer">
+                        <a
+                          href="https://github.com/amitkukrejadev/quiz-app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           View Code
                         </a>
                       </Button>
@@ -346,7 +467,8 @@ export default function ProjectsPage() {
                       Weather Dashboard
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      A weather application that displays current and forecasted weather data using the OpenWeatherMap API.
+                      A weather application that displays current and forecasted
+                      weather data using the OpenWeatherMap API.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       <Badge variant="outline">JavaScript</Badge>
@@ -354,15 +476,26 @@ export default function ProjectsPage() {
                       <Badge variant="outline">API Integration</Badge>
                     </div>
                     <div className="flex flex-wrap gap-4">
-                      <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200" size="sm">
+                      <Button
+                        className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+                        size="sm"
+                      >
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        <a href="https://weather-dashboard.vercel.app" target="_blank" rel="noopener noreferrer">
+                        <a
+                          href="https://weather-dashboard-2025.vercel.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           Live Demo
                         </a>
                       </Button>
                       <Button variant="outline" size="sm">
                         <Github className="w-4 h-4 mr-2" />
-                        <a href="https://github.com/amitkukrejadev/weather-dashboard" target="_blank" rel="noopener noreferrer">
+                        <a
+                          href="https://github.com/amitkukrejadev/weather-dashboard"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           View Code
                         </a>
                       </Button>
