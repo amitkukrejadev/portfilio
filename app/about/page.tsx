@@ -1,26 +1,73 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, BookOpen, Target, Lightbulb, Heart } from "lucide-react";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function AboutPage() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            entry.target.classList.remove("opacity-0", "translate-y-10");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const sections = document.querySelectorAll("section, .card-to-observe");
+    sections.forEach((section) => {
+      section.classList.add(
+        "opacity-0",
+        "translate-y-10",
+        "transition-all",
+        "duration-1000"
+      );
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="bg-white dark:bg-gray-950">
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            About Me
-          </h1>
-
-          <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 mb-12">
-            <p>
-              Hello! I'm Amit Kukreja, a Full Stack Developer with a passion for
-              building web applications that are both functional and beautiful.
-            </p>
+          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+            <div className="lg:col-span-1">
+              <div
+                className="card-to-observe bg-cover bg-center rounded-lg aspect-[2/2] w-full"
+                style={{
+                  backgroundImage: `url('/images/profile.jpg')`,
+                }}
+              ></div>
+            </div>
+            <div className="lg:col-span-2">
+              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                About Me
+              </h1>
+              <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 mb-12">
+                <p>
+                  Hello! I’m Amit Kukreja, a Frontend Developer with a passion
+                  for building web applications that are both functional and
+                  visually engaging. I recently completed my MCA from Jain
+                  University and have been sharpening my skills through projects
+                  and continuous learning. I enjoy creating clean, scalable
+                  frontends and crafting pixel-perfect user experiences. For me,
+                  coding is more than a career—it’s a way to solve problems,
+                  bring ideas to life, and keep growing every day.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <Card className="dark:border-gray-800">
+            <Card className="dark:border-gray-800 card-to-observe">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0">
@@ -43,7 +90,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="dark:border-gray-800">
+            <Card className="dark:border-gray-800 card-to-observe">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center flex-shrink-0">
@@ -92,7 +139,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <Card className="dark:border-gray-800">
+            <Card className="dark:border-gray-800 card-to-observe">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center flex-shrink-0">
@@ -116,7 +163,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="dark:border-gray-800">
+            <Card className="dark:border-gray-800 card-to-observe">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center flex-shrink-0">
