@@ -14,11 +14,12 @@ A modern, responsive portfolio website built with Next.js, showcasing my skills,
 
 ## 🚀 Live Demo
 
-Visit the live website: [amitkukrejadev.vercel.app](https://amitkukrejadev.vercel.app)
+Visit the live website: [amitkukreja.dev](https://amitkukreja.dev)
 
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **Next.js 15** - React framework with App Router
 - **React 18** - UI library
 - **TypeScript** - Type safety
@@ -27,10 +28,12 @@ Visit the live website: [amitkukrejadev.vercel.app](https://amitkukrejadev.verce
 - **Lucide React** - Beautiful icons
 
 ### Backend & Services
+
 - **EmailJS** - Contact form email functionality
 - **Vercel** - Deployment and hosting
 
 ### Development Tools
+
 - **ESLint** - Code linting
 - **Prettier** - Code formatting
 - **Git** - Version control
@@ -39,30 +42,31 @@ Visit the live website: [amitkukrejadev.vercel.app](https://amitkukrejadev.verce
 
 \`\`\`
 ├── app/
-│   ├── about/              # About page
-│   ├── contact/            # Contact page with working form
-│   ├── education/          # Education background
-│   ├── experience/         # Work experience
-│   ├── projects/           # Projects showcase
-│   ├── skills/             # Technical skills
-│   ├── globals.css         # Global styles
-│   ├── layout.tsx          # Root layout
-│   └── page.tsx            # Homepage
+│ ├── about/ # About page
+│ ├── contact/ # Contact page with working form
+│ ├── education/ # Education background
+│ ├── experience/ # Work experience
+│ ├── projects/ # Projects showcase
+│ ├── skills/ # Technical skills
+│ ├── globals.css # Global styles
+│ ├── layout.tsx # Root layout
+│ └── page.tsx # Homepage
 ├── components/
-│   ├── ui/                 # shadcn/ui components
-│   ├── footer.tsx          # Footer component
-│   ├── navbar.tsx          # Navigation component
-│   ├── theme-provider.tsx  # Theme context provider
-│   └── theme-toggle.tsx    # Dark/light mode toggle
-├── hooks/                  # Custom React hooks
-├── lib/                    # Utility functions
-└── public/                 # Static assets
+│ ├── ui/ # shadcn/ui components
+│ ├── footer.tsx # Footer component
+│ ├── navbar.tsx # Navigation component
+│ ├── theme-provider.tsx # Theme context provider
+│ └── theme-toggle.tsx # Dark/light mode toggle
+├── hooks/ # Custom React hooks
+├── lib/ # Utility functions
+└── public/ # Static assets
 \`\`\`
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm, yarn, or pnpm
 
 ### Installation
@@ -76,9 +80,13 @@ Visit the live website: [amitkukrejadev.vercel.app](https://amitkukrejadev.verce
 2. **Install dependencies**
    \`\`\`bash
    npm install
+
    # or
+
    yarn install
+
    # or
+
    pnpm install
    \`\`\`
 
@@ -90,9 +98,13 @@ Visit the live website: [amitkukrejadev.vercel.app](https://amitkukrejadev.verce
 4. **Run the development server**
    \`\`\`bash
    npm run dev
+
    # or
+
    yarn dev
+
    # or
+
    pnpm dev
    \`\`\`
 
@@ -111,17 +123,19 @@ To enable the contact form functionality:
 4. **Update the EmailJS credentials** in \`app/contact/page.tsx\`:
    \`\`\`typescript
    await emailjs.send(
-     "YOUR_SERVICE_ID",    // Replace with your service ID
-     "YOUR_TEMPLATE_ID",   // Replace with your template ID
-     formData,
-     "YOUR_PUBLIC_KEY"     // Replace with your public key
+   "YOUR_SERVICE_ID", // Replace with your service ID
+   "YOUR_TEMPLATE_ID", // Replace with your template ID
+   formData,
+   "YOUR_PUBLIC_KEY" // Replace with your public key
    )
    \`\`\`
 
 ### Customization
 
 #### Personal Information
+
 Update your details in:
+
 - \`app/page.tsx\` - Hero section
 - \`app/about/page.tsx\` - About content
 - \`app/experience/page.tsx\` - Work experience
@@ -130,6 +144,7 @@ Update your details in:
 - \`app/skills/page.tsx\` - Technical skills
 
 #### Styling
+
 - **Colors**: Modify \`tailwind.config.ts\` and \`app/globals.css\`
 - **Components**: Update shadcn/ui components in \`components/ui/\`
 - **Layout**: Adjust spacing and layout in individual page files
@@ -147,22 +162,26 @@ Update your details in:
 ## 🎨 Key Features Explained
 
 ### Dark/Light Mode
+
 - Implemented using \`next-themes\`
 - Persistent theme selection
 - Smooth transitions between modes
 
 ### Responsive Design
+
 - Mobile-first approach
 - Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
 - Flexible grid layouts and typography scaling
 
 ### Contact Form
+
 - Real email sending via EmailJS
 - Form validation and error handling
 - Loading states and success feedback
 - Accessible form labels and ARIA attributes
 
 ### Animations
+
 - CSS transitions for hover effects
 - JavaScript animations for tech icons
 - Smooth page transitions
@@ -170,11 +189,13 @@ Update your details in:
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
+
 1. **Push to GitHub**
 2. **Connect to Vercel**
 3. **Deploy automatically**
 
 ### Other Platforms
+
 - **Netlify**: Drag and drop \`out/\` folder after \`npm run build\`
 - **GitHub Pages**: Use \`next export\` for static export
 
@@ -199,10 +220,11 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📞 Contact
 
 **Amit Kukreja**
+
 - Email: [amitkukrejadev@gmail.com](mailto:amitkukrejadev@gmail.com)
 - LinkedIn: [linkedin.com/in/amitkukrejadev](https://linkedin.com/in/amitkukrejadev)
 - GitHub: [github.com/amitkukrejadev](https://github.com/amitkukrejadev)
-- Portfolio: [amitkukrejadev.vercel.app](https://amitkukrejadev.vercel.app)
+- Portfolio: [amitkukrejadev.dev](https://amitkukreja.dev)
 
 ## 🙏 Acknowledgments
 
