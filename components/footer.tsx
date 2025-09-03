@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, TwitterIcon, X } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -26,19 +26,35 @@ export default function Footer() {
                 { name: "About", href: "/about" },
                 { name: "Projects", href: "/projects" },
                 { name: "Contact", href: "/contact" },
+                {
+                  name: "Site Status",
+                  href: "https://status.amitkukreja.dev/",
+                  external: true,
+                },
               ].map((item) => (
                 <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
-                  >
-                    {item.name}
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+                    >
+                      {item.name}
+                      <span className="ml-2 inline-block bg-green-500 w-2 h-2 rounded-full"></span>
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
           </div>
-
           {/* Social Icons */}
           <div>
             <h3 className="text-md font-semibold dark:text-white mb-3">
@@ -50,9 +66,25 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition"
+                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition"
               >
                 <Github className="h-5 w-5" />
+              </a>
+              <a
+                href="mailto:amitkukrejadev@gmail.com"
+                aria-label="Email"
+                className="text-gray-600 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition"
+              >
+                <Mail className="h-5 w-5" />
+              </a>
+              <a
+                href="https://x.com/amitkukreja_dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >
+                <TwitterIcon className="h-5 w-5" />
               </a>
               <a
                 href="https://linkedin.com/in/amitkukrejadev"
@@ -62,13 +94,6 @@ export default function Footer() {
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
               >
                 <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="mailto:amitkukrejadev@gmail.com"
-                aria-label="Email"
-                className="text-gray-600 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition"
-              >
-                <Mail className="h-5 w-5" />
               </a>
             </div>
           </div>
