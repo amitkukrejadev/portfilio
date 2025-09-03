@@ -117,8 +117,8 @@ export default function ContactPage() {
   }, []);
 
   return (
-    <div className="bg-white dark:bg-gray-950">
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <div className="bg-white dark:bg-gray-950 pb-20">
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
             Contact Me
