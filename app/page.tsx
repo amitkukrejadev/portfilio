@@ -230,7 +230,7 @@ export default function Home() {
                     </div>
                   </a>
                   <a
-                    href="https://twitter.com/amitkukrejadev"
+                    href="https://twitter.com/amitkukreja_dev"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center"
