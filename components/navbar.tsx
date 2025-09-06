@@ -16,7 +16,6 @@ export default function Navbar() {
     { name: "About", path: "/about" },
     { name: "Experience", path: "/experience" },
     { name: "Education", path: "/education" },
-    { name: "Skills", path: "/skills" },
     { name: "Projects", path: "/projects" },
     { name: "Contact", path: "/contact" },
   ]
