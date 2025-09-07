@@ -699,7 +699,13 @@ export default function Home() {
               ></div>
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  FrameGenie
+                  FrameGenie 
+                  <Badge
+                    variant="outline"
+                    className="ml-4 text-yellow-700chnical Challenge border-green-400"
+                  >
+                     ✅ Live
+                  </Badge>
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   FrameGenie is a cutting-edge, full-stack SaaS platform that
@@ -783,6 +789,12 @@ export default function Home() {
               <div className="order-2 lg:order-1">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   Event-Driven Web App
+                  <Badge
+                    variant="outline"
+                    className="ml-4 text-yellow-700chnical Challenge border-yellow-300"
+                  >
+                    🚧 In Progress
+                  </Badge>
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   A modern event-driven SaaS starter designed for scalable
@@ -870,6 +882,12 @@ export default function Home() {
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   Q&A Full-Stack Platform
+                  <Badge
+                    variant="outline"
+                    className="ml-4 text-yellow-700chnical Challenge border-yellow-300"
+                  >
+                    🚧 In Progress
+                  </Badge>
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   A knowledge-sharing platform with secure authentication,
@@ -930,6 +948,12 @@ export default function Home() {
               <div className="order-2 lg:order-1">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   Secure LMS
+                  <Badge
+                    variant="outline"
+                    className="ml-4 text-yellow-700chnical Challenge border-yellow-300"
+                  >
+                    🚧 In Progress
+                  </Badge>
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   A course management platform with role-based access, media

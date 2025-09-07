@@ -139,6 +139,12 @@ export default function ProjectsPage() {
               <div className="order-2 lg:order-1 card-to-observe">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   Event-Driven Web App
+                  <Badge
+                    variant="outline"
+                    className="text-yellow-700 border-yellow-300"
+                  >
+                    🚧 In Progress
+                  </Badge>
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   A modern event-driven SaaS starter designed for scalable
@@ -216,7 +222,7 @@ export default function ProjectsPage() {
               <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-lg p-8 aspect-video flex items-center justify-center card-to-observe">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    Q&A Platform
+                    QNA Platform
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
                     Knowledge-Sharing Platform
@@ -225,7 +231,13 @@ export default function ProjectsPage() {
               </div>
               <div className="card-to-observe">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  Q&A Full-Stack Platform
+                  QNA Platform
+                  <Badge
+                    variant="outline"
+                    className="text-yellow-700 border-yellow-300"
+                  >
+                    🚧 In Progress
+                  </Badge>
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   A knowledge-sharing platform with secure authentication,
@@ -290,6 +302,12 @@ export default function ProjectsPage() {
               <div className="order-2 lg:order-1 card-to-observe">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   Secure LMS
+                  <Badge
+                    variant="outline"
+                    className="text-yellow-700 border-yellow-300"
+                  >
+                    🚧 In Progress
+                  </Badge>
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   A course management platform with role-based access, media
