@@ -327,10 +327,10 @@ export default function Home() {
                 <div className="flex justify-between items-start">
                   <div>
                     <CardTitle className="dark:text-white">
-                      Freelance Full Stack Developer
+                      Frontend Developer (Personal Projects)
                     </CardTitle>
                     <CardDescription className="dark:text-gray-400">
-                      Self-Employed (Remote)
+                      Self-Employed 
                     </CardDescription>
                   </div>
                   <span className="text-sm text-gray-500 dark:text-gray-400">
@@ -699,12 +699,12 @@ export default function Home() {
               ></div>
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  FrameGenie 
+                  FrameGenie
                   <Badge
                     variant="outline"
                     className="ml-4 text-yellow-700chnical Challenge border-green-400"
                   >
-                     ✅ Live
+                    ✅ Live
                   </Badge>
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">

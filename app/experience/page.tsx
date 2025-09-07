@@ -55,10 +55,10 @@ export default function ExperiencePage() {
                 <div className="flex justify-between items-start">
                   <div>
                     <CardTitle className="dark:text-white">
-                      Freelance Full Stack Developer
+                      Frontend Developer (Personal Projects)
                     </CardTitle>
                     <CardDescription className="dark:text-gray-400">
-                      Self-Employed (Remote)
+                      Self-Employed 
                     </CardDescription>
                   </div>
                   <span className="text-sm text-gray-500 dark:text-gray-400">

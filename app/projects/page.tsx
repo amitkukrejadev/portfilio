@@ -471,14 +471,15 @@ export default function ProjectsPage() {
                 <Card className="dark:border-gray-800 card-to-observe">
                   <CardContent className="pt-6">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                      Quiz App
+                      React Based Quiz App
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      An interactive quiz application built with JavaScript for
+                      An interactive quiz application built with React and JavaScript for
                       dynamic question rendering and scoring.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       <Badge variant="outline">JavaScript</Badge>
+                      <Badge variant="outline">React</Badge>
                       <Badge variant="outline">HTML/CSS</Badge>
                     </div>
                     <div className="flex flex-wrap gap-4">
