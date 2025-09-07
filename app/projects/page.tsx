@@ -141,7 +141,7 @@ export default function ProjectsPage() {
                   Event-Driven Web App
                   <Badge
                     variant="outline"
-                    className="text-yellow-700 border-yellow-300"
+                    className="ml-4 text-yellow-700 border-yellow-300"
                   >
                     🚧 In Progress
                   </Badge>
@@ -234,7 +234,7 @@ export default function ProjectsPage() {
                   QNA Platform
                   <Badge
                     variant="outline"
-                    className="text-yellow-700 border-yellow-300"
+                    className="ml-4 text-yellow-700 border-yellow-300"
                   >
                     🚧 In Progress
                   </Badge>
@@ -304,7 +304,7 @@ export default function ProjectsPage() {
                   Secure LMS
                   <Badge
                     variant="outline"
-                    className="text-yellow-700 border-yellow-300"
+                    className="ml-4 text-yellow-700 border-yellow-300"
                   >
                     🚧 In Progress
                   </Badge>
@@ -499,7 +499,7 @@ export default function ProjectsPage() {
                       <Button variant="outline" size="sm">
                         <Github className="w-4 h-4 mr-2" />
                         <a
-                          href="https://github.com/amitkukrejadev/quiz-app"
+                          href="https://github.com/amitkukrejadev/react-quiz-app"
                           target="_blank"
                           rel="noopener noreferrer"
                         >

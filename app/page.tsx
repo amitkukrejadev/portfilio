@@ -702,7 +702,7 @@ export default function Home() {
                   FrameGenie
                   <Badge
                     variant="outline"
-                    className="ml-4 text-yellow-700chnical Challenge border-green-400"
+                    className="ml-4 text-yellow-700 border-green-400"
                   >
                     ✅ Live
                   </Badge>
